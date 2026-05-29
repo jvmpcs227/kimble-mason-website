@@ -94,7 +94,7 @@ export default function Home() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center relative p-0.5">
+            <div className="w-12 h-12 flex items-center justify-center relative p-0.5 bg-white/10 rounded-sm">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
@@ -102,8 +102,8 @@ export default function Home() {
               />
             </div>
             <div className="flex flex-col">
-              <span className="font-serif text-xl font-bold tracking-tight text-primary group-hover:text-primary/80 transition-colors">Kimble Mason</span>
-              <span className="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold -mt-1">Leadership Development</span>
+              <span className={`font-serif text-xl font-bold tracking-tight transition-colors group-hover:opacity-80 ${isScrolled ? "text-primary" : "text-white"}`}>Kimble Mason</span>
+              <span className={`text-[10px] uppercase tracking-widest font-semibold -mt-1 transition-colors ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>Leadership Development</span>
             </div>
           </a>
 
@@ -113,7 +113,11 @@ export default function Home() {
               <a
                 key={link.name}
                 href={link.href}
-                className={`text-sm font-medium tracking-wide transition-colors hover:text-accent relative py-1 ${activeSection === link.href.substring(1) ? "text-primary font-semibold" : "text-muted-foreground"}`}
+                className={`text-sm font-medium tracking-wide transition-colors hover:text-accent relative py-1 ${
+                  isScrolled 
+                    ? (activeSection === link.href.substring(1) ? "text-primary font-semibold" : "text-muted-foreground") 
+                    : (activeSection === link.href.substring(1) ? "text-white font-semibold" : "text-white/80")
+                }`}
               >
                 {link.name}
                 {activeSection === link.href.substring(1) && (
@@ -121,7 +125,7 @@ export default function Home() {
                 )}
               </a>
             ))}
-            <Button asChild size="sm" className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide border border-accent/20 rounded-none shadow-sm px-5">
+            <Button asChild size="sm" className={`${isScrolled ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-accent hover:bg-accent/90 text-accent-foreground"} font-semibold tracking-wide border border-accent/20 rounded-none shadow-sm px-5`}>
               <a href="#contact">Work With Kim</a>
             </Button>
           </nav>
@@ -129,7 +133,7 @@ export default function Home() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 text-primary hover:text-accent transition-colors"
+            className={`md:hidden p-2 transition-colors hover:text-accent ${isScrolled ? "text-primary" : "text-white"}`}
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -600,6 +604,23 @@ export default function Home() {
                     <p className="text-base font-bold text-primary">
                       Perth, Western Australia
                     </p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-4">
+                  <div className="w-10 h-10 bg-primary/5 border border-accent/20 flex items-center justify-center text-accent">
+                    <Award className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">LinkedIn Profile</p>
+                    <a 
+                      href="https://au.linkedin.com/in/kimble-mason-092a981" 
+                      target="_blank" 
+                      rel="noopener noreferrer" 
+                      className="text-base font-bold text-primary hover:text-accent transition-colors flex items-center gap-1.5"
+                    >
+                      Connect on LinkedIn <ChevronRight className="w-4 h-4" />
+                    </a>
                   </div>
                 </div>
               </div>
