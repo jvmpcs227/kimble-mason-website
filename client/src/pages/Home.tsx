@@ -94,9 +94,9 @@ export default function Home() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center relative bg-white border border-border/40 p-1">
+            <div className="w-12 h-12 flex items-center justify-center relative p-0.5">
               <img 
-                src="/manus-storage/client_logo_64453007.jpg" 
+                src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full object-contain"
               />
@@ -682,9 +682,9 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center bg-white border border-border/40 p-1">
+              <div className="w-10 h-10 flex items-center justify-center p-0.5">
                 <img 
-                  src="/manus-storage/client_logo_64453007.jpg" 
+                  src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                   alt="KJM Leadership Development Logo" 
                   className="w-full h-full object-contain"
                 />
