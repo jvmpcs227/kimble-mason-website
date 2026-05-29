@@ -94,11 +94,11 @@ export default function Home() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center relative p-0.5 bg-white/10 rounded-sm">
+            <div className="w-12 h-12 flex items-center justify-center relative p-0.5 bg-transparent border-0 shadow-none">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full object-contain"
+                className="w-full h-full object-contain bg-transparent border-0 shadow-none"
               />
             </div>
             <div className="flex flex-col">
@@ -154,9 +154,6 @@ export default function Home() {
                   {link.name}
                 </a>
               ))}
-              <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold tracking-wide border border-accent/20 rounded-none shadow-sm w-full mt-2">
-                <a href="#contact" onClick={() => setMobileMenuOpen(false)}>Work With Kim</a>
-              </Button>
             </div>
           </div>
         )}
@@ -703,11 +700,11 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center p-0.5">
+              <div className="w-10 h-10 flex items-center justify-center p-0.5 bg-transparent border-0 shadow-none">
                 <img 
                   src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                   alt="KJM Leadership Development Logo" 
-                  className="w-full h-full object-contain"
+                  className="w-full h-full object-contain bg-transparent border-0 shadow-none"
                 />
               </div>
               <div className="flex flex-col">
