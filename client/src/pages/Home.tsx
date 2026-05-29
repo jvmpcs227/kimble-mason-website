@@ -94,10 +94,12 @@ export default function Home() {
       <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"}`}>
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 bg-primary flex items-center justify-center border border-accent/40 relative">
-              <span className="font-serif text-lg font-bold text-accent tracking-wider">KM</span>
-              <div className="absolute -bottom-0.5 -right-0.5 w-2 h-0.5 bg-accent"></div>
-              <div className="absolute -top-0.5 -left-0.5 w-0.5 h-2 bg-accent"></div>
+            <div className="w-12 h-12 flex items-center justify-center relative bg-white border border-border/40 p-1">
+              <img 
+                src="/manus-storage/client_logo_64453007.jpg" 
+                alt="KJM Leadership Development Logo" 
+                className="w-full h-full object-contain"
+              />
             </div>
             <div className="flex flex-col">
               <span className="font-serif text-xl font-bold tracking-tight text-primary group-hover:text-primary/80 transition-colors">Kimble Mason</span>
@@ -199,9 +201,9 @@ export default function Home() {
               
               <div className="w-full h-full overflow-hidden bg-primary/20">
                 <img 
-                  src="https://d2xsxph8kpxj0f.cloudfront.net/310519663575070665/EYXzQ57mEo6YHZtxS5bFmo/kim_profile-cGdH28gPaZTnCJaezu2HzH.webp" 
+                  src="/manus-storage/client_portrait_hero_7e1d775c.jpg" 
                   alt="Kimble Mason - Leadership Coach Perth" 
-                  className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                  className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
               </div>
             </div>
@@ -219,9 +221,9 @@ export default function Home() {
                 <div className="absolute -inset-4 border border-accent/20 translate-x-2 translate-y-2 z-0"></div>
                 <div className="relative z-10 overflow-hidden shadow-xl border border-border">
                   <img 
-                    src="https://d2xsxph8kpxj0f.cloudfront.net/310519663575070665/EYXzQ57mEo6YHZtxS5bFmo/about_kim_secondary-iCtX4mH39rxFPdByp8us9J.webp" 
-                    alt="Kimble Mason facilitating a leadership workshop in Perth" 
-                    className="w-full h-auto object-cover aspect-[3/2]"
+                    src="/manus-storage/client_portrait_about_53db7d7d.png" 
+                    alt="Kimble Mason - Leadership Development Specialist" 
+                    className="w-full h-auto object-cover aspect-[1/1]"
                   />
                   <div className="bg-primary text-primary-foreground p-6 border-t border-accent/30">
                     <p className="font-serif text-lg italic text-accent font-light">"True leadership is not about command; it is about inspiring others to achieve what they never thought possible."</p>
@@ -680,8 +682,12 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-10 bg-accent flex items-center justify-center border border-accent/40">
-                <span className="font-serif text-sm font-bold text-primary tracking-wider">KM</span>
+              <div className="w-10 h-10 flex items-center justify-center bg-white border border-border/40 p-1">
+                <img 
+                  src="/manus-storage/client_logo_64453007.jpg" 
+                  alt="KJM Leadership Development Logo" 
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div className="flex flex-col">
                 <span className="font-serif text-base font-bold tracking-tight text-primary-foreground">Kimble Mason</span>
@@ -694,7 +700,14 @@ export default function Home() {
             </p>
 
             <div className="flex gap-6">
-              <a href="#" className="text-xs text-primary-foreground/60 hover:text-accent transition-colors">LinkedIn</a>
+              <a 
+                href="https://au.linkedin.com/in/kimble-mason-092a981" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="text-xs text-primary-foreground/60 hover:text-accent transition-colors"
+              >
+                LinkedIn
+              </a>
               <span className="text-primary-foreground/20">|</span>
               <a href="#" className="text-xs text-primary-foreground/60 hover:text-accent transition-colors">Privacy Policy</a>
             </div>
