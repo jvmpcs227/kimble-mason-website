@@ -26,6 +26,7 @@ export default function Home() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
   const [isScrolled, setIsScrolled] = useState(false);
+  const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
   
   // Contact Form State
   const [formData, setFormData] = useState({
@@ -125,9 +126,6 @@ export default function Home() {
                 )}
               </a>
             ))}
-            <Button asChild size="sm" className={`${isScrolled ? "bg-primary hover:bg-primary/90 text-primary-foreground" : "bg-accent hover:bg-accent/90 text-accent-foreground"} font-semibold tracking-wide border border-accent/20 rounded-none shadow-sm px-5`}>
-              <a href="#contact">Work With Kim</a>
-            </Button>
           </nav>
 
           {/* Mobile Menu Button */}
@@ -727,12 +725,104 @@ export default function Home() {
                 LinkedIn
               </a>
               <span className="text-primary-foreground/20">|</span>
-              <a href="#" className="text-xs text-primary-foreground/60 hover:text-accent transition-colors">Privacy Policy</a>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  setPrivacyModalOpen(true);
+                }} 
+                className="text-xs text-primary-foreground/60 hover:text-accent transition-colors cursor-pointer bg-transparent border-0 p-0"
+              >
+                Privacy Policy
+              </button>
             </div>
           </div>
         </div>
-      </footer>
+            </footer>
 
+      {/* PRIVACY POLICY MODAL */}
+      {privacyModalOpen && (
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
+          <div 
+            className="bg-background text-foreground w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-border/80 animate-scale-in"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Header */}
+            <div className="flex items-center justify-between p-6 border-b border-border bg-primary text-primary-foreground">
+              <h3 className="font-serif text-xl font-bold">Privacy Policy</h3>
+              <button 
+                onClick={() => setPrivacyModalOpen(false)}
+                className="text-primary-foreground/80 hover:text-white hover:bg-white/10 p-1.5 transition-colors rounded-sm cursor-pointer"
+                aria-label="Close modal"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            
+            {/* Content */}
+            <div className="p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-muted-foreground">
+              <p className="text-xs italic">Last updated: May 30, 2026</p>
+              
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">1. Introduction</h4>
+                <p>
+                  Kimble Mason Leadership Development ("we", "us", "our") is committed to protecting your privacy in accordance with the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth). This Privacy Policy explains how we collect, use, disclose, and protect your personal information.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">2. Information We Collect</h4>
+                <p>
+                  We collect personal information directly from you when you submit enquiries through our website contact form. This information is limited to:
+                </p>
+                <ul className="list-disc pl-5 mt-2 space-y-1">
+                  <li>Your Name</li>
+                  <li>Your Organisation</li>
+                  <li>Your Email Address</li>
+                  <li>Any other information you voluntarily provide in your message</li>
+                </ul>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">3. How We Use Your Information</h4>
+                <p>
+                  The personal information we collect via our contact form is used <strong>solely to respond to your enquiries</strong> and to provide you with information or services that you request from us. We do not use this information for unrelated marketing lists, and we will never sell, rent, or lease your personal details to third parties.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">4. Disclosure of Personal Information</h4>
+                <p>
+                  We do not share, sell, or disclose your personal information to any third parties unless required by law, or as necessary to comply with a legal obligation.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">5. Data Security</h4>
+                <p>
+                  We take reasonable steps to ensure your personal information is stored securely and protected from unauthorised access, modification, or disclosure. However, please be aware that no transmission of data over the internet can be guaranteed as completely secure.
+                </p>
+              </div>
+
+              <div>
+                <h4 className="font-bold text-primary text-base mb-2">6. Access and Correction</h4>
+                <p>
+                  You have the right to request access to the personal information we hold about you, or to request that we correct or delete it. To make such a request, please contact us directly via the details provided on our website.
+                </p>
+              </div>
+            </div>
+
+            {/* Footer */}
+            <div className="flex justify-end p-4 border-t border-border bg-muted/30">
+              <Button 
+                onClick={() => setPrivacyModalOpen(false)}
+                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-none px-6"
+              >
+                Close
+              </Button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
