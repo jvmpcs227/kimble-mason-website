@@ -811,15 +811,6 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Footer */}
-            <div className="flex justify-end p-4 border-t border-border bg-muted/30">
-              <Button 
-                onClick={() => setPrivacyModalOpen(false)}
-                className="bg-primary hover:bg-primary/90 text-primary-foreground font-semibold rounded-none px-6"
-              >
-                Close
-              </Button>
-            </div>
           </div>
         </div>
       )}
