@@ -216,9 +216,10 @@ export default function Home() {
 
             {/* 5. HERO SECTION — MOVE LEADERSHIP QUOTE DIRECTLY UNDER PHOTO */}
             {/* Matches the portrait width (max-w-[240px] lg:w-[240px]) exactly so they align perfectly on both desktop edges */}
+            {/* Made the quote text slightly larger on desktop (lg:text-sm instead of text-xs) for significantly improved readability */}
             <div className="w-full max-w-[240px] lg:w-[240px] text-left">
-              <blockquote className="border-l-2 border-accent pl-3 py-0.5 italic text-primary-foreground/80 text-xs font-serif leading-relaxed">
-                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-[10px] uppercase tracking-wider text-accent font-bold ml-1.5 whitespace-nowrap">— Kimble J Mason</span>
+              <blockquote className="border-l-2 border-accent pl-3 py-0.5 italic text-primary-foreground/80 text-xs lg:text-sm font-serif leading-relaxed">
+                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-[10px] lg:text-[11px] uppercase tracking-wider text-accent font-bold ml-1.5 whitespace-nowrap">— Kimble J Mason</span>
               </blockquote>
             </div>
           </div>
