@@ -285,26 +285,28 @@ export default function Home() {
           </div>
           
           {/* Logo Strip Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-4 md:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
             {[
-              "BHP", 
-              "Rio Tinto", 
-              "Alinta Energy", 
-              "Synergy", 
-              "WA Treasury Corp", 
-              "WA Police", 
-              "DFES", 
-              "Perth Transport", 
-              "Horizon Power", 
-              "Vault Minerals"
-            ].map((company) => (
+              { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
+              { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png" },
+              { name: "Alinta Energy", logo: "/manus-storage/37943_f6c8e5c3.png" },
+              { name: "Synergy", logo: "/manus-storage/37942_bdf55f2e.png" },
+              { name: "WA Treasury Corp", logo: "/manus-storage/37936_e28c4255.png" },
+              { name: "WA Police", logo: "/manus-storage/37937_837442a9.png" },
+              { name: "DFES", logo: "/manus-storage/37941_c7aecb42.png" },
+              { name: "Perth Transport", logo: "/manus-storage/37947_fe88b17a.png" },
+              { name: "Horizon Power", logo: "/manus-storage/37935_7c7d4488.png" },
+              { name: "Vault Minerals", logo: "/manus-storage/37945_fb64d68b.png" }
+            ].map((client) => (
               <div 
-                key={company} 
-                className="bg-background border border-border py-4 px-6 flex items-center justify-center transition-all duration-300 hover:border-accent hover:shadow-sm group"
+                key={client.name} 
+                className="bg-white border-0 shadow-none rounded-lg p-6 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm"
               >
-                <span className="text-sm font-semibold tracking-wider text-muted-foreground group-hover:text-primary transition-colors uppercase">
-                  {company}
-                </span>
+                <img 
+                  src={client.logo} 
+                  alt={`${client.name} Logo`} 
+                  className="max-w-full max-h-full object-contain filter-none"
+                />
               </div>
             ))}
           </div>
