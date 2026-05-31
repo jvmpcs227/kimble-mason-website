@@ -248,8 +248,8 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
-          {/* Logo Strip Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+          {/* Logo Strip Grid - Desktop row-centering layout */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
               { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
               { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png" },
@@ -264,7 +264,7 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border-0 shadow-none rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm"
+                className="bg-white border-0 shadow-none rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
               >
                 <img 
                   src={client.logo} 
@@ -416,7 +416,8 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {/* Qualifications Grid - Centering the last row on desktop and tablet */}
+          <div className="flex flex-wrap justify-center gap-6">
             {[
               { title: "Executive & Organisational Coaching Certification", desc: "ICF Qualified & certified leadership coach.", icon: Award },
               { title: "Master of Business Administration (MBA)", desc: "Advanced business strategy, finance, and organizational behavior.", icon: BookOpen },
@@ -428,7 +429,10 @@ export default function Home() {
             ].map((cred, idx) => {
               const IconComponent = cred.icon;
               return (
-                <div key={idx} className="bg-secondary/20 border border-border p-6 flex items-start gap-4 hover:bg-secondary/40 transition-colors duration-200">
+                <div 
+                  key={idx} 
+                  className="bg-secondary/20 border border-border p-6 flex items-start gap-4 hover:bg-secondary/40 transition-colors duration-200 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
+                >
                   <div className="p-3 bg-background border border-accent/20 text-accent shrink-0">
                     <IconComponent className="w-5 h-5" />
                   </div>
