@@ -107,10 +107,9 @@ export default function Home() {
                 className="w-full h-full scale-105 object-contain bg-transparent border-0 shadow-none"
               />
             </div>
-            {/* 1. NAVBAR — ADD NAME NEXT TO LOGO */}
-            <div className="flex flex-col">
-              <span className="font-serif text-base font-bold tracking-tight text-primary">Kimble J Mason</span>
-              <span className="text-[9px] uppercase tracking-widest text-primary/50 font-semibold -mt-1">Leadership Development</span>
+            {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
+            <div className="flex items-center">
+              <span className="font-serif text-base md:text-lg font-bold tracking-tight text-primary">Kimble J Mason</span>
             </div>
           </a>
 
