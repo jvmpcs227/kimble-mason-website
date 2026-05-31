@@ -300,12 +300,12 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border-0 shadow-none rounded-lg p-6 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm"
+                className="bg-white border-0 shadow-none rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm"
               >
                 <img 
                   src={client.logo} 
                   alt={`${client.name} Logo`} 
-                  className="max-w-full max-h-full object-contain filter-none"
+                  className="w-auto h-auto max-w-[85%] max-h-[85%] object-contain filter-none"
                 />
               </div>
             ))}
