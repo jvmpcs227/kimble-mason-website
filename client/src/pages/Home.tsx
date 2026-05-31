@@ -247,8 +247,8 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
-          {/* Logo Strip Grid - Desktop row-centering layout with Premium Interactive Scale & Lift Hover Effects */}
-          <div className="flex flex-wrap justify-center gap-4 md:gap-6">
+          {/* Logo Strip Grid - Desktop row-centering layout with Premium Interactive Sibling-Dimming Hover Effects */}
+          <div className="flex flex-wrap justify-center gap-4 md:gap-6 group/grid">
             {[
               { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
               { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png" },
@@ -263,7 +263,7 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border border-transparent rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-[1.04] hover:-translate-y-1 hover:border-accent/20 group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
+                className="bg-white border border-transparent rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-[1.04] hover:-translate-y-1 hover:border-accent/20 group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px] group-hover/grid:opacity-50 hover:!opacity-100"
               >
                 <img 
                   src={client.logo} 
