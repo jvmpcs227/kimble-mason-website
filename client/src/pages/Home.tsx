@@ -229,7 +229,7 @@ export default function Home() {
             {/* 8. LEADERSHIP QUOTE */}
             <div className="pt-6 border-t border-border">
               <blockquote className="border-l-4 border-accent pl-4 py-1 italic text-primary/80 text-base font-serif leading-relaxed">
-                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals"
+                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-xs uppercase tracking-wider text-accent font-bold ml-2 whitespace-nowrap">— Kimble J Mason</span>
               </blockquote>
             </div>
           </div>
