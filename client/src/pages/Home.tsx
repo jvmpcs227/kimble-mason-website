@@ -684,22 +684,17 @@ export default function Home() {
       {/* 10. FOOTER */}
       <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10 py-12">
         <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 flex items-center justify-center p-0.5 bg-transparent border-0 shadow-none">
-                <img 
-                  src="/manus-storage/client_logo_transparent_ed3cf196.png" 
-                  alt="KJM Leadership Development Logo" 
-                  className="w-full h-full object-contain bg-transparent border-0 shadow-none"
-                />
-              </div>
-              <div className="flex flex-col">
-                <span className="font-serif text-base font-bold tracking-tight text-primary-foreground">Kimble Mason</span>
-                <span className="text-[9px] uppercase tracking-widest text-primary-foreground/50 font-semibold -mt-1">Leadership Development</span>
-              </div>
+          <div className="flex flex-col items-center gap-6">
+            {/* Centered, slightly larger standalone KJM logo */}
+            <div className="w-16 h-16 flex items-center justify-center bg-transparent border-0 shadow-none">
+              <img 
+                src="/manus-storage/client_logo_transparent_ed3cf196.png" 
+                alt="KJM Leadership Development Logo" 
+                className="w-full h-full object-contain bg-transparent border-0 shadow-none"
+              />
             </div>
 
-            <p className="text-xs text-primary-foreground/60 text-center md:text-left">
+            <p className="text-xs text-primary-foreground/60 text-center">
               © {new Date().getFullYear()} Kimble Mason Leadership Development. All rights reserved.
             </p>
 
