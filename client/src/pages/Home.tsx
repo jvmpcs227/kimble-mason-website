@@ -702,7 +702,7 @@ export default function Home() {
 
       {/* PRIVACY POLICY MODAL - Redesigned to match premium dark style of the site */}
       {privacyModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary/95 backdrop-blur-md animate-fade-in" onClick={() => setPrivacyModalOpen(false)}>
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary/95 backdrop-blur-md animate-fade-in">
           <div 
             className="bg-background text-foreground w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
             onClick={(e) => e.stopPropagation()}
@@ -713,19 +713,12 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/60"></div>
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/60"></div>
 
-            {/* Header */}
+            {/* Header - X button removed to enforce acknowledgment at the bottom */}
             <div className="flex items-center justify-between p-6 border-b border-border bg-secondary/20">
               <div className="space-y-1">
                 <h3 className="font-serif text-xl font-bold text-primary">Privacy Policy</h3>
                 <p className="text-[10px] text-accent uppercase tracking-widest font-bold">Australian Privacy Principles Compliant</p>
               </div>
-              <button 
-                onClick={() => setPrivacyModalOpen(false)}
-                className="text-muted-foreground hover:text-accent hover:bg-secondary/50 p-2 transition-all rounded-none cursor-pointer border border-border/50"
-                aria-label="Close modal"
-              >
-                <X className="w-4 h-4" />
-              </button>
             </div>
             
             {/* Content */}
