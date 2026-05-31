@@ -460,8 +460,8 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-1"></div>
           </div>
 
-          {/* 17. TESTIMONIALS — REPLACE ALL PLACEHOLDER QUOTES with 10 real quotes */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {/* 17. TESTIMONIALS — Clean 3-column grid for 9 real quotes, balancing perfectly across all devices */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
               {
                 quote: "I thought it was an awesome course - Kim was very knowledgeable, great sense of humour and made it an encouraging, positive environment. I felt engaged for the whole day and encouraged to put myself out there more.",
@@ -491,10 +491,7 @@ export default function Home() {
                 quote: "This was a very fun and informative workshop. Kim was an amazing and encouraging facilitator.",
                 author: "Health Support Services"
               },
-              {
-                quote: "Kim was great at delivering the course. He had the hardest task but he made the expectation of the course 'looking forward to the rest of it'.",
-                author: ""
-              },
+
               {
                 quote: "Kim was wonderful. He kept us on track and had a great combination of practical opportunities and theory.",
                 author: "City of Cockburn"
