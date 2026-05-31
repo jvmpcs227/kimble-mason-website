@@ -101,11 +101,12 @@ export default function Home() {
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
             {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
+            {/* Added 3% to the scale (1.10 -> 1.13) to make the logo exactly 3% bigger without altering any surrounding dimensions or text */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-110 object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-[1.133] object-contain bg-transparent border-0 shadow-none"
               />
             </div>
             {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
@@ -666,11 +667,12 @@ export default function Home() {
         <div className="container">
           <div className="flex flex-col items-center gap-6">
             {/* Noticeably bigger KJM logo in footer (w-24 h-24 instead of w-16 h-16) */}
+            {/* Added 3% to the scale (1.10 -> 1.13) to make the footer logo exactly 3% bigger */}
             <div className="w-24 h-24 flex items-center justify-center bg-transparent border-0 shadow-none">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full object-contain bg-transparent border-0 shadow-none scale-110"
+                className="w-full h-full object-contain bg-transparent border-0 shadow-none scale-[1.133]"
               />
             </div>
 
