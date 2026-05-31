@@ -15,7 +15,11 @@ import {
   Shield, 
   Star, 
   Users, 
-  X 
+  X,
+  Target,
+  MessageSquare,
+  Sparkles,
+  Volume2
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -94,14 +98,19 @@ export default function Home() {
       {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
       <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-1 md:py-1.5">
         <div className="container flex items-center justify-between">
-          <a href="#" className="flex items-center group">
-            {/* Slightly reduced logo and slimmer container for refined proportions */}
+          <a href="#" className="flex items-center gap-3 group">
+            {/* Logo container */}
             <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-2.5 md:-my-3">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full scale-105 object-contain bg-transparent border-0 shadow-none"
               />
+            </div>
+            {/* 1. NAVBAR — ADD NAME NEXT TO LOGO */}
+            <div className="flex flex-col">
+              <span className="font-serif text-base font-bold tracking-tight text-primary">Kimble J Mason</span>
+              <span className="text-[9px] uppercase tracking-widest text-primary/50 font-semibold -mt-1">Leadership Development</span>
             </div>
           </a>
 
@@ -167,20 +176,20 @@ export default function Home() {
               <span className="text-xs uppercase tracking-widest text-accent font-bold">30+ Years British Army Leadership</span>
             </div>
             
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-primary-foreground leading-[1.1] font-serif">
-              Developing Leaders Who <span className="text-accent italic font-normal">Inspire</span>, Transform and Make a Lasting Impact
+            {/* 2. HERO SECTION — REWRITE MAIN HEADING */}
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground leading-[1.3] font-serif">
+              Purpose: To develop effective and influential leadership capabilities in individuals and teams that inspire followers, facilitate change and growth to make a lasting impact
             </h1>
             
-            <p className="text-lg sm:text-xl text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
-              Executive Coaching & Leadership Development tailored for high-stakes corporate, mining, energy, and public sectors in Perth, Western Australia.
+            {/* 3. HERO SECTION — REWRITE SUBHEADING */}
+            <p className="text-base sm:text-lg text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
+              Executive Coaching and Leadership Development tailored to meet the needs of your managers, leaders and teams in Western Australia.
             </p>
             
+            {/* 4. HERO SECTION — BUTTONS */}
             <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground font-bold tracking-wide rounded-none px-8 py-6 text-base shadow-lg transition-transform active:scale-[0.97]">
-                <a href="#contact">Work With Kim</a>
-              </Button>
               <Button asChild size="lg" variant="outline" className="border-primary-foreground/20 hover:border-accent hover:bg-accent/10 text-primary-foreground font-semibold tracking-wide rounded-none px-8 py-6 text-base">
-                <a href="#services">Explore Services</a>
+                <a href="#services">Services</a>
               </Button>
             </div>
           </div>
@@ -209,35 +218,24 @@ export default function Home() {
       <section id="about" className="py-24 bg-background border-b border-border scroll-mt-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            {/* Secondary Photo */}
-            <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative">
-                <div className="absolute -inset-4 border border-accent/20 translate-x-2 translate-y-2 z-0"></div>
-                <div className="relative z-10 overflow-hidden shadow-xl border border-border">
+            {/* 5. ABOUT SECTION — PHOTO SIZE */}
+            {/* Secondary Photo - Made significantly smaller (lg:col-span-2 instead of 3, and max-w-[150px]) */}
+            <div className="lg:col-span-2 order-2 lg:order-1 flex justify-center">
+              <div className="relative w-full max-w-[150px]">
+                <div className="absolute -inset-2 border border-accent/20 translate-x-1 translate-y-1 z-0"></div>
+                <div className="relative z-10 overflow-hidden shadow-md border border-border">
                   <img 
-                    src="/manus-storage/client_portrait_about_53db7d7d.png" 
+                    src="/manus-storage/client_portrait_hero_7e1d775c.jpg" 
                     alt="Kimble Mason - Leadership Development Specialist" 
-                    className="w-full h-auto object-cover aspect-[1/1]"
+                    className="w-full h-auto object-cover aspect-[1/1] filter grayscale"
                   />
-                  <div className="bg-primary text-primary-foreground p-6 border-t border-accent/30">
-                    <p className="font-serif text-lg italic text-accent font-light">"True leadership is not about command; it is about inspiring others to achieve what they never thought possible."</p>
-                    <p className="text-xs uppercase tracking-widest text-primary-foreground/60 mt-3 font-semibold">— Kimble Mason</p>
-                  </div>
                 </div>
               </div>
             </div>
 
-            {/* Profile Content */}
-            <div className="lg:col-span-7 order-1 lg:order-2 space-y-6">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-8 bg-accent"></span>
-                <span className="text-xs uppercase tracking-widest text-accent font-bold">The Facilitator</span>
-              </div>
-              
-              <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">
-                About Kimble Mason
-              </h2>
-              
+            {/* Profile Content - Adjusted width to fill space (lg:col-span-10 instead of 9) */}
+            <div className="lg:col-span-10 order-1 lg:order-2 space-y-6">
+              {/* 7. ABOUT SECTION — REMOVE TEXT (No labels, no "About Kimble Mason" heading, no location paragraph, no "Military Precision" text) */}
               <p className="text-lg font-serif text-primary/90 italic leading-relaxed">
                 Kimble Mason <span className="text-sm font-sans font-bold not-italic bg-accent/10 text-accent px-2 py-0.5">BSc, MSc, MBA</span> is a Leadership Development specialist, executive coach and facilitator with over 30 years of experience developing individuals in complex, high-pressure public, military and private sector environments.
               </p>
@@ -245,30 +243,12 @@ export default function Home() {
               <p className="text-base text-muted-foreground leading-relaxed">
                 A graduate of the United Kingdom's elite Army Officer Training Organisation, <strong>The Royal Military Academy Sandhurst</strong>, Kim brings deep practical insight into what effective leadership really looks like. He is known for his engaging presence, emotional intelligence and ability to influence at all levels.
               </p>
-              
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Based in Perth, Western Australia, Kim specializes in transitioning high-potential managers into exceptional executives, aligning corporate leadership with military-grade strategic execution, and building resilient organizational cultures.
-              </p>
 
-              <div className="grid grid-cols-2 gap-6 pt-4 border-t border-border">
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-primary/5 text-accent border border-accent/10">
-                    <Shield className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-sm font-bold text-primary">Military Precision</h4>
-                    <p className="text-xs text-muted-foreground">RMAS training adapted for corporate strategy.</p>
-                  </div>
-                </div>
-                <div className="flex items-start gap-3">
-                  <div className="p-2 bg-primary/5 text-accent border border-accent/10">
-                    <Users className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <h4 className="font-serif text-sm font-bold text-primary">High EQ Coaching</h4>
-                    <p className="text-xs text-muted-foreground">Emotionally intelligent executive facilitation.</p>
-                  </div>
-                </div>
+              {/* 8. LEADERSHIP QUOTE */}
+              <div className="pt-4 border-t border-border">
+                <blockquote className="border-l-4 border-accent pl-4 py-1 italic text-primary/80 text-base font-serif leading-relaxed">
+                  "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals"
+                </blockquote>
               </div>
             </div>
           </div>
@@ -278,10 +258,12 @@ export default function Home() {
       {/* 4. CLIENT LOGO BAR */}
       <section id="clients" className="py-16 bg-secondary/50 border-b border-border scroll-mt-20">
         <div className="container text-center">
+          {/* 9. TRUSTED BY SECTION — HEADING */}
           <div className="flex flex-col items-center space-y-3 mb-10">
-            <span className="text-xs uppercase tracking-widest text-accent font-bold">Corporate Trust</span>
-            <h2 className="text-2xl font-bold text-primary font-serif">Trusted By</h2>
-            <div className="h-0.5 w-12 bg-accent mt-1"></div>
+            <h2 className="text-xl md:text-2xl font-bold text-primary font-serif max-w-4xl leading-snug">
+              Kim has designed and facilitated high impact leadership development programs for Organisations including:
+            </h2>
+            <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
           {/* Logo Strip Grid */}
@@ -316,12 +298,8 @@ export default function Home() {
       {/* 5. CORE SERVICES SECTION */}
       <section id="services" className="py-24 bg-background border-b border-border scroll-mt-20">
         <div className="container">
+          {/* 10. CORE SERVICES SECTION — REMOVE ORANGE LABEL */}
           <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-16">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-accent"></span>
-              <span className="text-xs uppercase tracking-widest text-accent font-bold">Services</span>
-              <span className="h-px w-8 bg-accent"></span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Our Core Services</h2>
             <p className="text-base text-muted-foreground">
               All programs are customised and contextualised to meet the unique needs of your leaders and teams, ensuring immediate practical application and long-term behavioral change.
@@ -330,15 +308,17 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {/* Service 1 */}
-            <div className="bg-background border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
+            {/* 12. CORE SERVICES — SERVICE CARD STYLING: bg-secondary/10 (slightly darker than bg-background) and visually impactful icons */}
+            <div className="bg-secondary/10 border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
               <div className="absolute top-0 left-0 w-2 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center border border-accent/20">
-                  <Users className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center border border-accent/30 shadow-inner">
+                  <Target className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold font-serif text-primary">Executive Coaching</h3>
+                {/* 11. CORE SERVICES — UPDATE SERVICE CARD DESCRIPTIONS */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  One-on-one sessions tailored to enhance leadership purpose, presence, decision-making, and confident performance. Ideal for high-potential managers stepping into executive roles.
+                  "Ideal for helping individuals to unlock their creative potential to achieve their work and life goals and to move forward on those things that are important to you."
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
@@ -347,15 +327,16 @@ export default function Home() {
             </div>
 
             {/* Service 2 */}
-            <div className="bg-background border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
+            <div className="bg-secondary/10 border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
               <div className="absolute top-0 left-0 w-2 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center border border-accent/20">
-                  <Compass className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center border border-accent/30 shadow-inner">
+                  <Users className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold font-serif text-primary">Team Development Workshops</h3>
+                {/* 11. CORE SERVICES — UPDATE SERVICE CARD DESCRIPTIONS */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Highly interactive sessions designed to strengthen collaboration, trust, and accountability within teams. We break down organizational silos and align collective strategic intent.
+                  "Highly Interactive sessions designed to help develop effective and high performing teams by strengthening team understanding, dynamics, collaboration, trust, and accountability."
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
@@ -364,15 +345,16 @@ export default function Home() {
             </div>
 
             {/* Service 3 */}
-            <div className="bg-background border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
+            <div className="bg-secondary/10 border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
               <div className="absolute top-0 left-0 w-2 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center border border-accent/20">
-                  <Briefcase className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center border border-accent/30 shadow-inner">
+                  <Sparkles className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-xl font-bold font-serif text-primary">Leadership Training Programs</h3>
+                {/* 11. CORE SERVICES — UPDATE SERVICE CARD DESCRIPTIONS */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Structured courses covering Intent Based and Inclusive Leadership, conflict resolution, and change management. Practical toolkits designed for immediate deployment in high-pressure sectors.
+                  "Structured courses covering topics such as 'What is effective Leadership?', Intent Based and Inclusive Leadership, Performance Management, Mental Wellbeing, Difficult Conversations, Conflict resolution, and change management."
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
@@ -381,15 +363,16 @@ export default function Home() {
             </div>
 
             {/* Service 4 */}
-            <div className="bg-background border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
+            <div className="bg-secondary/10 border border-border p-8 hover:border-accent hover:shadow-md transition-all duration-300 relative group flex flex-col justify-between">
               <div className="absolute top-0 left-0 w-2 h-0.5 bg-accent group-hover:w-full transition-all duration-300"></div>
               <div className="space-y-4">
-                <div className="w-12 h-12 bg-primary/5 text-primary flex items-center justify-center border border-accent/20">
-                  <Presentation className="w-6 h-6 text-accent" />
+                <div className="w-12 h-12 bg-primary/10 text-primary flex items-center justify-center border border-accent/30 shadow-inner">
+                  <Volume2 className="w-6 h-6 text-accent" />
                 </div>
-                <h3 className="text-xl font-bold font-serif text-primary">Executive Presentation & Communication</h3>
+                <h3 className="text-xl font-bold font-serif text-primary">Executive Presentation and Communication Skills</h3>
+                {/* 11. CORE SERVICES — UPDATE SERVICE CARD DESCRIPTIONS */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  Learn the art of public speaking and presenting with personal impact, conviction, influence, authenticity and authority. Commanded from 30+ years of military briefing experience.
+                  "Learn and practice the art of delivering information and presenting with confidence, personal impact, conviction, and authority."
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
@@ -404,18 +387,9 @@ export default function Home() {
       <section id="programs" className="py-24 bg-secondary/30 border-b border-border scroll-mt-20">
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            {/* 13. LEADERSHIP PROGRAMS SECTION: Remove "Curriculum" label/heading; remove two paragraphs under "Leadership Programs Include" heading; keep only the topic list */}
             <div className="lg:col-span-5 space-y-6">
-              <div className="flex items-center gap-3">
-                <span className="h-px w-8 bg-accent"></span>
-                <span className="text-xs uppercase tracking-widest text-accent font-bold">Curriculum</span>
-              </div>
               <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Leadership Programs Include</h2>
-              <p className="text-base text-muted-foreground leading-relaxed">
-                Our curriculum is designed to target both internal attributes (self-awareness, EQ) and external execution skills (change management, presentation authority). 
-              </p>
-              <p className="text-sm text-muted-foreground">
-                We combine rigorous theoretical models (MBA, MSc) with battle-tested practical frameworks to deliver highly effective development paths.
-              </p>
             </div>
 
             <div className="lg:col-span-7">
@@ -451,15 +425,12 @@ export default function Home() {
       {/* 7. CREDENTIALS SECTION */}
       <section id="credentials" className="py-24 bg-background border-b border-border scroll-mt-20">
         <div className="container">
+          {/* 14. CREDENTIALS SECTION — REMOVE PEDIGREE: Remove "Pedigree" label/heading entirely */}
           <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-16">
-            <div className="flex items-center gap-3">
-              <span className="h-px w-8 bg-accent"></span>
-              <span className="text-xs uppercase tracking-widest text-accent font-bold">Pedigree</span>
-              <span className="h-px w-8 bg-accent"></span>
-            </div>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Qualifications & Memberships</h2>
+            {/* 15. CREDENTIALS SECTION — UPDATE WORDING: change "to the highest standard" to "to the highest standard of coaching and facilitation integrity." */}
             <p className="text-base text-muted-foreground">
-              A solid foundation of academic excellence, executive certification, and professional membership ensuring the highest standard of coaching integrity.
+              A solid foundation of academic excellence, executive certification, and professional membership ensuring the highest standard of coaching and facilitation integrity.
             </p>
           </div>
 
@@ -476,11 +447,12 @@ export default function Home() {
               const IconComponent = cred.icon;
               return (
                 <div key={idx} className="bg-secondary/20 border border-border p-6 flex items-start gap-4 hover:bg-secondary/40 transition-colors duration-200">
-                  <div className="p-3 bg-background border border-accent/20 text-accent">
+                  <div className="p-3 bg-background border border-accent/20 text-accent shrink-0">
                     <IconComponent className="w-5 h-5" />
                   </div>
                   <div className="space-y-1">
-                    <h4 className="font-serif text-base font-bold text-primary leading-snug">{cred.title}</h4>
+                    {/* 16. CREDENTIALS SECTION — SMALLER TEXT: Qualifications text smaller throughout (text-sm for title, text-xs for description) */}
+                    <h4 className="font-serif text-sm font-bold text-primary leading-snug">{cred.title}</h4>
                     <p className="text-xs text-muted-foreground leading-relaxed">{cred.desc}</p>
                   </div>
                 </div>
@@ -503,38 +475,66 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-1"></div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {/* Testimonial 1 */}
-            <div className="bg-primary-foreground/5 border border-primary-foreground/10 p-8 relative flex flex-col justify-between backdrop-blur-sm">
-              <div className="space-y-4">
-                <div className="flex text-accent gap-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent" />)}
+          {/* 17. TESTIMONIALS — REPLACE ALL PLACEHOLDER QUOTES with 10 real quotes */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                quote: "I thought it was an awesome course - Kim was very knowledgeable, great sense of humour and made it an encouraging, positive environment. I felt engaged for the whole day and encouraged to put myself out there more.",
+                author: "Alinta Energy"
+              },
+              {
+                quote: "The session was very well facilitated. The activities were engaging and plentiful, keeping the energy in the room up throughout the day. Kim was great and the content covered was very applicable to my role.",
+                author: "Alinta Energy"
+              },
+              {
+                quote: "Kim was an outstanding facilitator. His energy, knowledge and ability to engage the cohort in discussions was excellent.",
+                author: "Station Officer, DFES"
+              },
+              {
+                quote: "Kim is exceptional at his role. Excellent presentation. The fact that Kim managed to keep 20 Firies engaged all day was an achievement.",
+                author: "DFES"
+              },
+              {
+                quote: "Excellent Presentation.",
+                author: "Vault Minerals"
+              },
+              {
+                quote: "Kim is an excellent facilitator — very engaging, reads the room, delivers the content at good pace with humour and some personal connections with all attendees.",
+                author: "Health Support Services"
+              },
+              {
+                quote: "This was a very fun and informative workshop. Kim was an amazing and encouraging facilitator.",
+                author: "Health Support Services"
+              },
+              {
+                quote: "Kim was great at delivering the course. He had the hardest task but he made the expectation of the course 'looking forward to the rest of it'.",
+                author: ""
+              },
+              {
+                quote: "Kim was wonderful. He kept us on track and had a great combination of practical opportunities and theory.",
+                author: "City of Cockburn"
+              },
+              {
+                quote: "No improvement required as this session was a standout and the most informative and engaging of the sessions attended to date.",
+                author: "City of Perth"
+              }
+            ].map((t, idx) => (
+              <div key={idx} className="bg-primary-foreground/5 border border-primary-foreground/10 p-8 relative flex flex-col justify-between backdrop-blur-sm">
+                <div className="space-y-4">
+                  <div className="flex text-accent gap-1">
+                    {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent" />)}
+                  </div>
+                  <p className="font-serif text-base italic text-primary-foreground/90 leading-relaxed">
+                    "{t.quote}"
+                  </p>
                 </div>
-                <p className="font-serif text-lg italic text-primary-foreground/90 leading-relaxed">
-                  "Kimble's coaching was instrumental during my transition into an executive role. His unique blend of military precision and deep corporate intelligence gave me the confidence and clarity needed to lead our division through complex organizational changes."
-                </p>
-              </div>
-              <div className="pt-6 border-t border-primary-foreground/10 mt-6">
-                <p className="font-serif text-sm font-bold text-accent">Executive Director</p>
-                <p className="text-xs text-primary-foreground/60">Perth Resources & Mining Sector</p>
-              </div>
-            </div>
-
-            {/* Testimonial 2 */}
-            <div className="bg-primary-foreground/5 border border-primary-foreground/10 p-8 relative flex flex-col justify-between backdrop-blur-sm">
-              <div className="space-y-4">
-                <div className="flex text-accent gap-1">
-                  {[...Array(5)].map((_, i) => <Star key={i} className="w-4 h-4 fill-accent" />)}
+                <div className="pt-4 border-t border-primary-foreground/10 mt-6 shrink-0">
+                  <p className="font-serif text-sm font-bold text-accent">
+                    {t.author || "Participant Feedback"}
+                  </p>
                 </div>
-                <p className="font-serif text-lg italic text-primary-foreground/90 leading-relaxed">
-                  "The Team Development workshops led by Kim completely transformed our leadership team's dynamics. He cut through the politics and helped us establish a high-trust, intent-based execution model that has dramatically improved our accountability."
-                </p>
               </div>
-              <div className="pt-6 border-t border-primary-foreground/10 mt-6">
-                <p className="font-serif text-sm font-bold text-accent">General Manager</p>
-                <p className="text-xs text-primary-foreground/60">Western Australian Energy Utility</p>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
@@ -546,12 +546,8 @@ export default function Home() {
             
             {/* Contact Details */}
             <div className="lg:col-span-5 space-y-8">
+              {/* 18. CONTACT SECTION — REMOVE HEADING: Remove "Work With Kim" heading and "Engagement" label at top */}
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <span className="h-px w-8 bg-accent"></span>
-                  <span className="text-xs uppercase tracking-widest text-accent font-bold">Engagement</span>
-                </div>
-                <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Work With Kim</h2>
                 <p className="text-base text-muted-foreground leading-relaxed">
                   Ready to develop leadership capability in your organisation? Get in touch to discuss a tailored coaching engagement, team workshop, or strategic training program.
                 </p>
@@ -685,7 +681,6 @@ export default function Home() {
       <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10 py-12">
         <div className="container">
           <div className="flex flex-col items-center gap-6">
-            {/* Centered, slightly larger standalone KJM logo */}
             <div className="w-16 h-16 flex items-center justify-center bg-transparent border-0 shadow-none">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
@@ -720,7 +715,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-            </footer>
+      </footer>
 
       {/* PRIVACY POLICY MODAL */}
       {privacyModalOpen && (
