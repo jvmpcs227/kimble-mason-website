@@ -700,11 +700,11 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* PRIVACY POLICY MODAL - Redesigned to match premium dark style of the site */}
+      {/* PRIVACY POLICY MODAL - Redesigned to match premium dark style of the site with comfortable bottom clearance */}
       {privacyModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary/95 backdrop-blur-md animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-primary/95 backdrop-blur-md animate-fade-in">
           <div 
-            className="bg-background text-foreground w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
+            className="bg-background text-foreground w-full max-w-2xl max-h-[85vh] md:max-h-[80vh] mb-4 md:mb-0 flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Geometric accents matching the site's design */}
@@ -774,11 +774,11 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Footer button inside modal */}
-            <div className="p-4 bg-secondary/10 border-t border-border flex justify-end">
+            {/* Footer button inside modal - increased padding and lifted slightly for perfect mobile/PC screen clearance */}
+            <div className="p-5 md:p-6 bg-secondary/10 border-t border-border flex justify-end">
               <Button 
                 onClick={() => setPrivacyModalOpen(false)}
-                className="bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none px-6 text-xs h-9 transition-colors"
+                className="bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none px-6 text-xs h-10 transition-colors shadow-sm cursor-pointer"
               >
                 Acknowledge & Close
               </Button>
