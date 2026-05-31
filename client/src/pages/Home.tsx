@@ -92,15 +92,15 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-accent/30 selection:text-primary">
       
       {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-3 md:py-4">
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-1.5 md:py-2">
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center group">
-            {/* Enlarged logo with no accompanying text */}
-            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none">
+            {/* Enlarged logo with no accompanying text, slimmed down container but larger logo */}
+            <div className="w-24 h-24 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-3 md:-my-4">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-110 object-contain bg-transparent border-0 shadow-none"
               />
             </div>
           </a>
