@@ -774,8 +774,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Footer button inside modal - shrink-0 prevents squishing; extra bottom padding (pb-8 md:pb-8) lifts button safely above screen edges and gold corner accents */}
-            <div className="p-5 pb-8 md:p-6 md:pb-8 bg-secondary/10 border-t border-border flex justify-end shrink-0">
+            {/* Footer button inside modal - slimmed down and modern (py-3 px-6) for a sleek, balanced, and sophisticated look */}
+            <div className="py-3 px-6 bg-secondary/10 border-t border-border flex justify-end shrink-0">
               <Button 
                 onClick={() => setPrivacyModalOpen(false)}
                 className="bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none px-6 text-xs h-10 transition-colors shadow-sm cursor-pointer"
