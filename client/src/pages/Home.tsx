@@ -91,20 +91,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-accent/30 selection:text-primary">
       
-      {/* 1. NAVIGATION BAR */}
-      <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-background/95 backdrop-blur-md border-b border-border shadow-sm py-4" : "bg-transparent py-6"}`}>
+      {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-3 md:py-4">
         <div className="container flex items-center justify-between">
-          <a href="#" className="flex items-center gap-3 group">
-            <div className="w-12 h-12 flex items-center justify-center relative p-0.5 bg-transparent border-0 shadow-none">
+          <a href="#" className="flex items-center group">
+            {/* Enlarged logo with no accompanying text */}
+            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full object-contain bg-transparent border-0 shadow-none"
               />
-            </div>
-            <div className="flex flex-col">
-              <span className={`font-serif text-xl font-bold tracking-tight transition-colors group-hover:opacity-80 ${isScrolled ? "text-primary" : "text-white"}`}>Kimble Mason</span>
-              <span className={`text-[10px] uppercase tracking-widest font-semibold -mt-1 transition-colors ${isScrolled ? "text-muted-foreground" : "text-white/70"}`}>Leadership Development</span>
             </div>
           </a>
 
@@ -115,9 +112,7 @@ export default function Home() {
                 key={link.name}
                 href={link.href}
                 className={`text-sm font-medium tracking-wide transition-colors hover:text-accent relative py-1 ${
-                  isScrolled 
-                    ? (activeSection === link.href.substring(1) ? "text-primary font-semibold" : "text-muted-foreground") 
-                    : (activeSection === link.href.substring(1) ? "text-white font-semibold" : "text-white/80")
+                  activeSection === link.href.substring(1) ? "text-primary font-semibold" : "text-muted-foreground"
                 }`}
               >
                 {link.name}
@@ -131,7 +126,7 @@ export default function Home() {
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className={`md:hidden p-2 transition-colors hover:text-accent ${isScrolled ? "text-primary" : "text-white"}`}
+            className="md:hidden p-2 transition-colors hover:text-accent text-primary"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -419,11 +414,6 @@ export default function Home() {
               <p className="text-sm text-muted-foreground">
                 We combine rigorous theoretical models (MBA, MSc) with battle-tested practical frameworks to deliver highly effective development paths.
               </p>
-              <div className="pt-4">
-                <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wide rounded-none shadow-md">
-                  <a href="#contact">Request Program Syllabus</a>
-                </Button>
-              </div>
             </div>
 
             <div className="lg:col-span-7">

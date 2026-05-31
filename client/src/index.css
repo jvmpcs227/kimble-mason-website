@@ -29,8 +29,8 @@
   --color-ring: var(--ring);
   
   /* Font Family Definitions */
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-serif: Arial, sans-serif;
+  --font-sans: Arial, sans-serif;
 }
 
 :root {
