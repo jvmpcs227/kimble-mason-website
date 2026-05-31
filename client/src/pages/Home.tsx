@@ -96,20 +96,21 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-accent/30 selection:text-primary">
       
       {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-1 md:py-1.5">
+      {/* Increased height slightly to py-2 md:py-2.5 to accommodate noticeably bigger logo (w-24 h-24 -> w-28 h-24 on desktop) without looking cramped */}
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-2 md:py-2.5">
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
-            {/* Logo container */}
-            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-2.5 md:-my-3">
+            {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
+            <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-105 object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-110 object-contain bg-transparent border-0 shadow-none"
               />
             </div>
             {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
             <div className="flex items-center">
-              <span className="font-serif text-base md:text-lg font-bold tracking-tight text-primary">Kimble J Mason</span>
+              <span className="font-serif text-base md:text-xl font-bold tracking-tight text-primary">Kimble J Mason</span>
             </div>
           </a>
 
@@ -160,42 +161,43 @@ export default function Home() {
         )}
       </header>
 
-      {/* 2. HERO SECTION */}
-      <section className="relative min-h-screen flex items-center justify-center pt-24 overflow-hidden bg-primary">
+            {/* 2. HERO SECTION - Vertically narrower (py-12 md:py-16, removed min-h-screen to avoid taking too much screen height) */}
+      <section className="relative flex items-center justify-center pt-32 pb-16 overflow-hidden bg-primary">
         {/* Subtle Textured Background */}
         <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663575070665/EYXzQ57mEo6YHZtxS5bFmo/hero_bg-nbdrtnu7oiFTdrbRiwnQTj.webp')` }} />
         
         {/* Subtle Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
 
-        <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-16 lg:py-24">
+        <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-6 md:py-10">
           <div className="lg:col-span-8 flex flex-col space-y-6 text-left">
+            {/* Removed Shield Icon & Updated Badge Text */}
             <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1 self-start">
-              <Shield className="w-4 h-4 text-accent" />
-              <span className="text-xs uppercase tracking-widest text-accent font-bold">30+ Years British Army Leadership</span>
+              <span className="text-xs uppercase tracking-widest text-accent font-bold">30+ Years British Army Officer Leadership</span>
             </div>
             
-            {/* 2. HERO SECTION — REWRITE MAIN HEADING */}
+            {/* 4. HERO SECTION — REORDER AND RESIZE TEXT */}
+            {/* Executive Coaching is now the dominant larger text */}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground leading-[1.3] font-serif">
-              Purpose: To develop effective and influential leadership capabilities in individuals and teams that inspire followers, facilitate change and growth to make a lasting impact
+              Executive Coaching and Leadership Development tailored to meet the needs of Individuals, Managers, Leaders and Teams in Western Australia.
             </h1>
             
-            {/* 3. HERO SECTION — REWRITE SUBHEADING */}
-            <p className="text-base sm:text-lg text-primary-foreground/80 font-light max-w-2xl leading-relaxed">
-              Executive Coaching and Leadership Development tailored to meet the needs of your managers, leaders and teams in Western Australia.
+            {/* Purpose paragraph is smaller but still prominent, sitting below */}
+            <p className="text-sm sm:text-base text-primary-foreground/80 font-light max-w-3xl leading-relaxed">
+              Purpose: To develop effective and influential leadership capabilities in individuals and teams that inspire followers, facilitate change and growth to make a lasting impact
             </p>
             
             {/* 4. HERO SECTION — BUTTONS */}
-            <div className="pt-4 flex flex-col sm:flex-row gap-4">
-              <Button asChild size="lg" variant="outline" className="border-primary-foreground/20 hover:border-accent hover:bg-accent/10 text-primary-foreground font-semibold tracking-wide rounded-none px-8 py-6 text-base">
+            <div className="pt-2 flex flex-col sm:flex-row gap-4">
+              <Button asChild size="lg" variant="outline" className="border-primary-foreground/20 hover:border-accent hover:bg-accent/10 text-primary-foreground font-semibold tracking-wide rounded-none px-8 py-5 text-sm h-11">
                 <a href="#services">Services</a>
               </Button>
             </div>
           </div>
 
           {/* Premium Profile Portrait Container - Noticeably smaller max-width (max-w-[260px]) and neat alignment */}
-          <div className="lg:col-span-4 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[260px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
+          <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-6">
+            <div className="relative w-full max-w-[240px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
               <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
               <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
@@ -208,6 +210,13 @@ export default function Home() {
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
               </div>
+            </div>
+
+            {/* 5. HERO SECTION — MOVE LEADERSHIP QUOTE DIRECTLY UNDER PHOTO */}
+            <div className="w-full max-w-[280px] lg:max-w-[320px] text-left">
+              <blockquote className="border-l-2 border-accent pl-3 py-0.5 italic text-primary-foreground/80 text-xs font-serif leading-relaxed">
+                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-[10px] uppercase tracking-wider text-accent font-bold ml-1.5 whitespace-nowrap">— Kimble J Mason</span>
+              </blockquote>
             </div>
           </div>
         </div>
@@ -226,12 +235,7 @@ export default function Home() {
               A graduate of the United Kingdom's elite Army Officer Training Organisation, <strong>The Royal Military Academy Sandhurst</strong>, Kim brings deep practical insight into what effective leadership really looks like. He is known for his engaging presence, emotional intelligence and ability to influence at all levels.
             </p>
 
-            {/* 8. LEADERSHIP QUOTE */}
-            <div className="pt-6 border-t border-border">
-              <blockquote className="border-l-4 border-accent pl-4 py-1 italic text-primary/80 text-base font-serif leading-relaxed">
-                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-xs uppercase tracking-wider text-accent font-bold ml-2 whitespace-nowrap">— Kimble J Mason</span>
-              </blockquote>
-            </div>
+            {/* Quote moved to Hero Section */}
           </div>
         </div>
       </section>
@@ -247,7 +251,7 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
-          {/* Logo Strip Grid - Desktop row-centering layout with Very Subtle Hover Scale-Up */}
+          {/* Logo Strip Grid - Desktop row-centering layout with Very Subtle Hover Scale-Up & noticeably larger logos inside boxes */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
               { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
@@ -263,12 +267,12 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border border-transparent rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:scale-[1.02] group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
+                className="bg-white border border-transparent rounded-lg p-2 md:p-3 h-24 flex items-center justify-center transition-all duration-300 hover:scale-[1.02] group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
               >
                 <img 
                   src={client.logo} 
                   alt={`${client.name} Logo`} 
-                  className="w-auto h-auto max-w-[85%] max-h-[85%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.01]"
+                  className="w-auto h-auto max-w-[96%] max-h-[96%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.01]"
                 />
               </div>
             ))}
@@ -281,7 +285,7 @@ export default function Home() {
         <div className="container">
           {/* 10. CORE SERVICES SECTION — REMOVE ORANGE LABEL */}
           <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Our Core Services</h2>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary font-serif">Services</h2>
             <p className="text-base text-muted-foreground">
               All programs are customised and contextualised to meet the unique needs of your leaders and teams, ensuring immediate practical application and long-term behavioral change.
             </p>
@@ -299,7 +303,7 @@ export default function Home() {
                 <h3 className="text-xl font-bold font-serif text-primary">Executive Coaching</h3>
                 {/* 11. CORE SERVICES — UPDATE SERVICE CARD DESCRIPTIONS */}
                 <p className="text-sm text-muted-foreground leading-relaxed">
-                  "Ideal for helping individuals to unlock their creative potential to achieve their work and life goals and to move forward on those things that are important to you."
+                  "Ideal for helping individuals to unlock their creative potential to achieve their work and life goals and to move forward on those things that are important to them."
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
@@ -455,7 +459,6 @@ export default function Home() {
         
         <div className="container relative z-10">
           <div className="flex flex-col items-center text-center space-y-4 max-w-3xl mx-auto mb-16">
-            <span className="text-xs uppercase tracking-widest text-accent font-bold">Feedback</span>
             <h2 className="text-3xl sm:text-4xl font-bold text-primary-foreground font-serif">What My Clients Say</h2>
             <div className="h-0.5 w-12 bg-accent mt-1"></div>
           </div>
@@ -526,11 +529,10 @@ export default function Home() {
         <div className="container max-w-5xl">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Contact Details - Resized and balanced nicely */}
+            {/* Contact Details - Resized and balanced nicely (Get in Touch heading removed) */}
             <div className="lg:col-span-5 space-y-6">
               <div className="space-y-4">
                 <div className="h-1 w-10 bg-accent"></div>
-                <h3 className="font-serif text-2xl font-bold text-primary">Get in Touch</h3>
               </div>
 
               <div className="space-y-4 pt-2">
@@ -539,8 +541,8 @@ export default function Home() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <a href="mailto:kim@integral.global" className="text-base font-bold text-primary hover:text-accent transition-colors">
-                      kim@integral.global
+                    <a href="mailto:kimjmason@hotmail.com" className="text-base font-bold text-primary hover:text-accent transition-colors">
+                      kimjmason@hotmail.com
                     </a>
                   </div>
                 </div>
@@ -641,7 +643,7 @@ export default function Home() {
                     value={formData.message}
                     onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required 
-                    placeholder="How can we help develop your leaders?" 
+                    placeholder="" 
                     rows={3}
                     className="bg-background border-border rounded-none focus-visible:ring-accent resize-none text-sm"
                   />
@@ -661,11 +663,12 @@ export default function Home() {
       <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10 py-12">
         <div className="container">
           <div className="flex flex-col items-center gap-6">
-            <div className="w-16 h-16 flex items-center justify-center bg-transparent border-0 shadow-none">
+            {/* Noticeably bigger KJM logo in footer (w-24 h-24 instead of w-16 h-16) */}
+            <div className="w-24 h-24 flex items-center justify-center bg-transparent border-0 shadow-none">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full object-contain bg-transparent border-0 shadow-none scale-110"
               />
             </div>
 

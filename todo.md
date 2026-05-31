@@ -1,0 +1,37 @@
+# Kim's Third Round of Changes - Todo List
+
+- [x] 1. NAVBAR — BIGGER LOGO & WIDER BAR
+  - Make KJM logo noticeably bigger in the navbar.
+  - Increase navbar height slightly to accommodate the larger logo so it doesn't look cramped.
+  - Maintain a striking, modern balance so the bar is not too tall or weird.
+- [x] 2. HERO SECTION — VERTICALLY NARROWER
+  - Reduce vertical height of the dark blue hero section.
+  - Keep all content inside as is, just make the section shorter top to bottom.
+- [x] 3. HERO SECTION — REMOVE SHIELD ICON & UPDATE BADGE TEXT
+  - Remove the shield icon from the "30+ Years British Army Leadership" badge.
+  - Update badge text to: "30+ Years British Army Officer Leadership"
+- [x] 4. HERO SECTION — REORDER AND RESIZE TEXT
+  - Swap visual prominence:
+    - Dominant larger text: "Executive Coaching and Leadership Development tailored to meet the needs of Individuals, Managers, Leaders and Teams in Western Australia."
+    - Smaller but still prominent text sitting below: "Purpose: To develop effective and influential leadership capabilities in individuals and teams that inspire followers, facilitate change and growth to make a lasting impact"
+- [x] 5. HERO SECTION — MOVE LEADERSHIP QUOTE
+  - Move the "True leadership is not about position, authority or command..." quote from the About section.
+  - Place it directly underneath Kim's black and white photo in the hero section.
+- [x] 6. CORE SERVICES — RENAME HEADING
+  - Change "Our Core Services" to just "Services".
+- [x] 7. CORE SERVICES — UPDATE EXECUTIVE COACHING TEXT
+  - In the Executive Coaching card, replace "to you" with "them".
+  - Sentence should end: "...on those things that are important to them."
+- [x] 8. CLIENT LOGOS — MAKE LOGOS BIGGER
+  - Increase the size of all company logos within their rectangular boxes.
+  - Scale up proportionally without stretching or distorting any logo.
+- [x] 9. TESTIMONIALS — REMOVE "FEEDBACK" LABEL
+  - Remove the gold "FEEDBACK" label above "What My Clients Say".
+- [x] 10. CONTACT SECTION — REMOVE "GET IN TOUCH" HEADING
+  - Remove the "Get in Touch" heading from the contact section.
+- [x] 11. CONTACT SECTION — UPDATE EMAIL ADDRESS
+  - Change email from `kim@integral.global` to `kimjmason@hotmail.com` everywhere (contact details, mailto links, etc.).
+- [x] 12. CONTACT FORM — REMOVE PLACEHOLDER TEXT FROM MESSAGE BOX
+  - Remove the placeholder text inside the message field. Leave it completely empty.
+- [x] 13. FOOTER — BIGGER KJM LOGO
+  - Make KJM logo in the footer noticeably bigger.
