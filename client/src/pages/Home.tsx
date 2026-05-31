@@ -170,7 +170,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
 
         <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-16 lg:py-24">
-          <div className="lg:col-span-7 flex flex-col space-y-6 text-left">
+          <div className="lg:col-span-8 flex flex-col space-y-6 text-left">
             <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1 self-start">
               <Shield className="w-4 h-4 text-accent" />
               <span className="text-xs uppercase tracking-widest text-accent font-bold">30+ Years British Army Leadership</span>
@@ -194,13 +194,13 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Premium Profile Portrait Container */}
-          <div className="lg:col-span-5 flex justify-center lg:justify-end">
-            <div className="relative w-full max-w-[380px] aspect-[3/4] border border-accent/30 p-3 bg-primary-foreground/5 backdrop-blur-sm">
-              <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
-              <div className="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-accent"></div>
-              <div className="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-accent"></div>
-              <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
+          {/* Premium Profile Portrait Container - Noticeably smaller max-width (max-w-[260px]) and neat alignment */}
+          <div className="lg:col-span-4 flex justify-center lg:justify-end">
+            <div className="relative w-full max-w-[260px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
               
               <div className="w-full h-full overflow-hidden bg-primary/20">
                 <img 
@@ -217,39 +217,21 @@ export default function Home() {
       {/* 3. ABOUT / PROFILE SECTION */}
       <section id="about" className="py-24 bg-background border-b border-border scroll-mt-20">
         <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
-            {/* 5. ABOUT SECTION — PHOTO SIZE */}
-            {/* Secondary Photo - Made significantly smaller (lg:col-span-2 instead of 3, and max-w-[150px]) */}
-            <div className="lg:col-span-2 order-2 lg:order-1 flex justify-center">
-              <div className="relative w-full max-w-[150px]">
-                <div className="absolute -inset-2 border border-accent/20 translate-x-1 translate-y-1 z-0"></div>
-                <div className="relative z-10 overflow-hidden shadow-md border border-border">
-                  <img 
-                    src="/manus-storage/client_portrait_hero_7e1d775c.jpg" 
-                    alt="Kimble Mason - Leadership Development Specialist" 
-                    className="w-full h-auto object-cover aspect-[1/1] filter grayscale"
-                  />
-                </div>
-              </div>
-            </div>
+          {/* About content reorganised cleanly as a centered block without any photo */}
+          <div className="max-w-3xl mx-auto space-y-6 text-left">
+            <p className="text-lg font-serif text-primary/90 italic leading-relaxed">
+              Kimble Mason <span className="text-sm font-sans font-bold not-italic bg-accent/10 text-accent px-2 py-0.5">BSc, MSc, MBA</span> is a Leadership Development specialist, executive coach and facilitator with over 30 years of experience developing individuals in complex, high-pressure public, military and private sector environments.
+            </p>
+            
+            <p className="text-base text-muted-foreground leading-relaxed">
+              A graduate of the United Kingdom's elite Army Officer Training Organisation, <strong>The Royal Military Academy Sandhurst</strong>, Kim brings deep practical insight into what effective leadership really looks like. He is known for his engaging presence, emotional intelligence and ability to influence at all levels.
+            </p>
 
-            {/* Profile Content - Adjusted width to fill space (lg:col-span-10 instead of 9) */}
-            <div className="lg:col-span-10 order-1 lg:order-2 space-y-6">
-              {/* 7. ABOUT SECTION — REMOVE TEXT (No labels, no "About Kimble Mason" heading, no location paragraph, no "Military Precision" text) */}
-              <p className="text-lg font-serif text-primary/90 italic leading-relaxed">
-                Kimble Mason <span className="text-sm font-sans font-bold not-italic bg-accent/10 text-accent px-2 py-0.5">BSc, MSc, MBA</span> is a Leadership Development specialist, executive coach and facilitator with over 30 years of experience developing individuals in complex, high-pressure public, military and private sector environments.
-              </p>
-              
-              <p className="text-base text-muted-foreground leading-relaxed">
-                A graduate of the United Kingdom's elite Army Officer Training Organisation, <strong>The Royal Military Academy Sandhurst</strong>, Kim brings deep practical insight into what effective leadership really looks like. He is known for his engaging presence, emotional intelligence and ability to influence at all levels.
-              </p>
-
-              {/* 8. LEADERSHIP QUOTE */}
-              <div className="pt-4 border-t border-border">
-                <blockquote className="border-l-4 border-accent pl-4 py-1 italic text-primary/80 text-base font-serif leading-relaxed">
-                  "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals"
-                </blockquote>
-              </div>
+            {/* 8. LEADERSHIP QUOTE */}
+            <div className="pt-6 border-t border-border">
+              <blockquote className="border-l-4 border-accent pl-4 py-1 italic text-primary/80 text-base font-serif leading-relaxed">
+                "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals"
+              </blockquote>
             </div>
           </div>
         </div>
