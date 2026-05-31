@@ -247,7 +247,7 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
-          {/* Logo Strip Grid - Desktop row-centering layout */}
+          {/* Logo Strip Grid - Desktop row-centering layout with Premium Interactive Scale & Lift Hover Effects */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
               { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
@@ -263,12 +263,12 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border-0 shadow-none rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-sm w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
+                className="bg-white border border-transparent rounded-lg p-3 md:p-4 h-24 flex items-center justify-center transition-all duration-300 hover:shadow-md hover:scale-[1.04] hover:-translate-y-1 hover:border-accent/20 group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
               >
                 <img 
                   src={client.logo} 
                   alt={`${client.name} Logo`} 
-                  className="w-auto h-auto max-w-[85%] max-h-[85%] object-contain filter-none"
+                  className="w-auto h-auto max-w-[85%] max-h-[85%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.02]"
                 />
               </div>
             ))}
@@ -525,20 +525,18 @@ export default function Home() {
       </section>
 
       {/* 9. CONTACT SECTION */}
-      <section id="contact" className="py-24 bg-background scroll-mt-20">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+      <section id="contact" className="py-20 bg-background scroll-mt-20">
+        <div className="container max-w-5xl">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
             
-            {/* Contact Details */}
-            <div className="lg:col-span-5 space-y-8">
-              {/* 18. CONTACT SECTION — REMOVE HEADING: Remove "Work With Kim" heading and "Engagement" label at top */}
+            {/* Contact Details - Resized and balanced nicely */}
+            <div className="lg:col-span-5 space-y-6">
               <div className="space-y-4">
-                <p className="text-base text-muted-foreground leading-relaxed">
-                  Ready to develop leadership capability in your organisation? Get in touch to discuss a tailored coaching engagement, team workshop, or strategic training program.
-                </p>
+                <div className="h-1 w-10 bg-accent"></div>
+                <h3 className="font-serif text-2xl font-bold text-primary">Get in Touch</h3>
               </div>
 
-              <div className="space-y-4 pt-4 border-t border-border">
+              <div className="space-y-4 pt-2">
                 <div className="flex items-center gap-4">
                   <div className="w-10 h-10 bg-primary/5 border border-accent/20 flex items-center justify-center text-accent">
                     <Mail className="w-5 h-5" />
@@ -590,72 +588,72 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Contact Form */}
-            <div className="lg:col-span-7">
-              <div className="bg-secondary/20 border border-border p-8 md:p-10 shadow-sm">
-                <h3 className="text-xl font-bold font-serif text-primary mb-6">Send a Message</h3>
-                <form onSubmit={handleContactSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <label htmlFor="name" className="text-xs uppercase tracking-wider font-bold text-primary">Full Name *</label>
-                      <Input 
-                        id="name"
-                        type="text" 
-                        required
-                        value={formData.name}
-                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        placeholder="John Doe" 
-                        className="bg-background border-border rounded-none focus-visible:ring-accent"
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <label htmlFor="organisation" className="text-xs uppercase tracking-wider font-bold text-primary">Organisation</label>
-                      <Input 
-                        id="organisation"
-                        type="text" 
-                        value={formData.organisation}
-                        onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                        placeholder="Company Pty Ltd" 
-                        className="bg-background border-border rounded-none focus-visible:ring-accent"
-                      />
-                    </div>
-                  </div>
+            {/* Contact Form - Resized to fit nicely side-by-side with contact details */}
+            <div className="lg:col-span-7 bg-secondary/10 border border-border p-6 md:p-8 relative">
+              <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-accent/40"></div>
+              <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-accent/40"></div>
+              <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/40"></div>
+              <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/40"></div>
 
-                  <div className="space-y-2">
-                    <label htmlFor="email" className="text-xs uppercase tracking-wider font-bold text-primary">Email Address *</label>
+              <form onSubmit={handleContactSubmit} className="space-y-4">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="name" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Full Name *</label>
                     <Input 
-                      id="email"
-                      type="email" 
-                      required
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="john@company.com" 
-                      className="bg-background border-border rounded-none focus-visible:ring-accent"
+                      id="name" 
+                      name="name" 
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      required 
+                      placeholder="e.g. John Doe" 
+                      className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
                     />
                   </div>
-
-                  <div className="space-y-2">
-                    <label htmlFor="message" className="text-xs uppercase tracking-wider font-bold text-primary">Message *</label>
-                    <Textarea 
-                      id="message"
-                      rows={5}
-                      required
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Describe your leadership development requirements..." 
-                      className="bg-background border-border rounded-none focus-visible:ring-accent resize-none"
+                  <div className="space-y-1.5">
+                    <label htmlFor="organisation" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Organisation</label>
+                    <Input 
+                      id="organisation" 
+                      name="organisation" 
+                      value={formData.organisation}
+                      onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
+                      placeholder="e.g. Acme Corp" 
+                      className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
                     />
                   </div>
+                </div>
 
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="bg-primary hover:bg-primary/90 text-primary-foreground font-bold tracking-wide rounded-none w-full py-6 shadow-md"
-                  >
-                    {isSubmitting ? "Sending..." : "Submit Inquiry"}
-                  </Button>
-                </form>
-              </div>
+                <div className="space-y-1.5">
+                  <label htmlFor="email" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Email Address *</label>
+                  <Input 
+                    id="email" 
+                    name="email" 
+                    type="email" 
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    required 
+                    placeholder="e.g. john@company.com" 
+                    className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
+                  />
+                </div>
+
+                <div className="space-y-1.5">
+                  <label htmlFor="message" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Your Message *</label>
+                  <Textarea 
+                    id="message" 
+                    name="message" 
+                    value={formData.message}
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                    required 
+                    placeholder="How can we help develop your leaders?" 
+                    rows={3}
+                    className="bg-background border-border rounded-none focus-visible:ring-accent resize-none text-sm"
+                  />
+                </div>
+
+                <Button type="submit" disabled={isSubmitting} className="w-full bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none py-5 transition-all duration-300 text-sm h-11">
+                  {isSubmitting ? "Sending..." : "Submit Inquiry"}
+                </Button>
+              </form>
             </div>
 
           </div>
@@ -702,42 +700,51 @@ export default function Home() {
         </div>
       </footer>
 
-      {/* PRIVACY POLICY MODAL */}
+      {/* PRIVACY POLICY MODAL - Redesigned to match premium dark style of the site */}
       {privacyModalOpen && (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm animate-fade-in">
+        <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-primary/95 backdrop-blur-md animate-fade-in" onClick={() => setPrivacyModalOpen(false)}>
           <div 
-            className="bg-background text-foreground w-full max-w-2xl max-h-[85vh] flex flex-col shadow-2xl border border-border/80 animate-scale-in"
+            className="bg-background text-foreground w-full max-w-2xl max-h-[80vh] flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
+            {/* Geometric accents matching the site's design */}
+            <div className="absolute top-0 left-0 w-3 h-3 border-t border-l border-accent/60"></div>
+            <div className="absolute top-0 right-0 w-3 h-3 border-t border-r border-accent/60"></div>
+            <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/60"></div>
+            <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/60"></div>
+
             {/* Header */}
-            <div className="flex items-center justify-between p-6 border-b border-border bg-primary text-primary-foreground">
-              <h3 className="font-serif text-xl font-bold">Privacy Policy</h3>
+            <div className="flex items-center justify-between p-6 border-b border-border bg-secondary/20">
+              <div className="space-y-1">
+                <h3 className="font-serif text-xl font-bold text-primary">Privacy Policy</h3>
+                <p className="text-[10px] text-accent uppercase tracking-widest font-bold">Australian Privacy Principles Compliant</p>
+              </div>
               <button 
                 onClick={() => setPrivacyModalOpen(false)}
-                className="text-primary-foreground/80 hover:text-white hover:bg-white/10 p-1.5 transition-colors rounded-sm cursor-pointer"
+                className="text-muted-foreground hover:text-accent hover:bg-secondary/50 p-2 transition-all rounded-none cursor-pointer border border-border/50"
                 aria-label="Close modal"
               >
-                <X className="w-5 h-5" />
+                <X className="w-4 h-4" />
               </button>
             </div>
             
             {/* Content */}
-            <div className="p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-muted-foreground">
-              <p className="text-xs italic">Last updated: May 30, 2026</p>
+            <div className="p-6 overflow-y-auto space-y-6 text-sm leading-relaxed text-muted-foreground scrollbar-thin">
+              <p className="text-xs italic text-accent/80">Last updated: May 31, 2026</p>
               
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">1. Introduction</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">1. Introduction</h4>
                 <p>
                   Kimble Mason Leadership Development ("we", "us", "our") is committed to protecting your privacy in accordance with the Australian Privacy Principles (APPs) contained in the Privacy Act 1988 (Cth). This Privacy Policy explains how we collect, use, disclose, and protect your personal information.
                 </p>
               </div>
 
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">2. Information We Collect</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">2. Information We Collect</h4>
                 <p>
                   We collect personal information directly from you when you submit enquiries through our website contact form. This information is limited to:
                 </p>
-                <ul className="list-disc pl-5 mt-2 space-y-1">
+                <ul className="list-disc pl-5 space-y-1">
                   <li>Your Name</li>
                   <li>Your Organisation</li>
                   <li>Your Email Address</li>
@@ -745,33 +752,43 @@ export default function Home() {
                 </ul>
               </div>
 
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">3. How We Use Your Information</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">3. How We Use Your Information</h4>
                 <p>
                   The personal information we collect via our contact form is used <strong>solely to respond to your enquiries</strong> and to provide you with information or services that you request from us. We do not use this information for unrelated marketing lists, and we will never sell, rent, or lease your personal details to third parties.
                 </p>
               </div>
 
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">4. Disclosure of Personal Information</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">4. Disclosure of Personal Information</h4>
                 <p>
                   We do not share, sell, or disclose your personal information to any third parties unless required by law, or as necessary to comply with a legal obligation.
                 </p>
               </div>
 
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">5. Data Security</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">5. Data Security</h4>
                 <p>
                   We take reasonable steps to ensure your personal information is stored securely and protected from unauthorised access, modification, or disclosure. However, please be aware that no transmission of data over the internet can be guaranteed as completely secure.
                 </p>
               </div>
 
-              <div>
-                <h4 className="font-bold text-primary text-base mb-2">6. Access and Correction</h4>
+              <div className="space-y-2">
+                <h4 className="font-serif font-bold text-primary text-base border-b border-border pb-1">6. Access and Correction</h4>
                 <p>
                   You have the right to request access to the personal information we hold about you, or to request that we correct or delete it. To make such a request, please contact us directly via the details provided on our website.
                 </p>
               </div>
+            </div>
+
+            {/* Footer button inside modal */}
+            <div className="p-4 bg-secondary/10 border-t border-border flex justify-end">
+              <Button 
+                onClick={() => setPrivacyModalOpen(false)}
+                className="bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none px-6 text-xs h-9 transition-colors"
+              >
+                Acknowledge & Close
+              </Button>
             </div>
 
           </div>
