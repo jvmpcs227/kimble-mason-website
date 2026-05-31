@@ -704,7 +704,7 @@ export default function Home() {
       {privacyModalOpen && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 md:p-6 bg-primary/95 backdrop-blur-md animate-fade-in">
           <div 
-            className="bg-background text-foreground w-full max-w-2xl max-h-[85vh] md:max-h-[80vh] mb-4 md:mb-0 flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
+            className="bg-background text-foreground w-full max-w-2xl max-h-[80vh] md:max-h-[75vh] flex flex-col shadow-2xl border border-accent/20 relative animate-scale-in"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Geometric accents matching the site's design */}
@@ -713,8 +713,8 @@ export default function Home() {
             <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/60"></div>
             <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/60"></div>
 
-            {/* Header - X button removed to enforce acknowledgment at the bottom */}
-            <div className="flex items-center justify-between p-6 border-b border-border bg-secondary/20">
+            {/* Header - shrink-0 added to prevent vertical compression */}
+            <div className="flex items-center justify-between p-6 border-b border-border bg-secondary/20 shrink-0">
               <div className="space-y-1">
                 <h3 className="font-serif text-xl font-bold text-primary">Privacy Policy</h3>
                 <p className="text-[10px] text-accent uppercase tracking-widest font-bold">Australian Privacy Principles Compliant</p>
@@ -774,8 +774,8 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Footer button inside modal - increased padding and lifted slightly for perfect mobile/PC screen clearance */}
-            <div className="p-5 md:p-6 bg-secondary/10 border-t border-border flex justify-end">
+            {/* Footer button inside modal - shrink-0 prevents squishing; extra bottom padding (pb-8 md:pb-8) lifts button safely above screen edges and gold corner accents */}
+            <div className="p-5 pb-8 md:p-6 md:pb-8 bg-secondary/10 border-t border-border flex justify-end shrink-0">
               <Button 
                 onClick={() => setPrivacyModalOpen(false)}
                 className="bg-primary hover:bg-accent text-primary-foreground font-bold tracking-wide rounded-none px-6 text-xs h-10 transition-colors shadow-sm cursor-pointer"
