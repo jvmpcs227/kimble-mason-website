@@ -195,9 +195,10 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Premium Profile Portrait Container - Noticeably smaller max-width (max-w-[260px]) and neat alignment */}
+          {/* Premium Profile Portrait Container - Perfectly aligned with the quote on desktop */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-6">
-            <div className="relative w-full max-w-[240px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
+            {/* Set exact width on desktop (w-[240px]) to match the quote block precisely */}
+            <div className="relative w-full max-w-[240px] lg:w-[240px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
               <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
               <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
@@ -213,7 +214,8 @@ export default function Home() {
             </div>
 
             {/* 5. HERO SECTION — MOVE LEADERSHIP QUOTE DIRECTLY UNDER PHOTO */}
-            <div className="w-full max-w-[280px] lg:max-w-[320px] text-left">
+            {/* Matches the portrait width (max-w-[240px] lg:w-[240px]) exactly so they align perfectly on both desktop edges */}
+            <div className="w-full max-w-[240px] lg:w-[240px] text-left">
               <blockquote className="border-l-2 border-accent pl-3 py-0.5 italic text-primary-foreground/80 text-xs font-serif leading-relaxed">
                 "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-[10px] uppercase tracking-wider text-accent font-bold ml-1.5 whitespace-nowrap">— Kimble J Mason</span>
               </blockquote>
@@ -251,18 +253,18 @@ export default function Home() {
             <div className="h-0.5 w-12 bg-accent mt-2"></div>
           </div>
           
-          {/* Logo Strip Grid - Desktop row-centering layout with Very Subtle Hover Scale-Up & noticeably larger logos inside boxes */}
+          {/* Logo Strip Grid - Desktop row-centering layout with custom scale overrides to ensure all logos match visually */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
               { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
-              { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png" },
-              { name: "Alinta Energy", logo: "/manus-storage/37943_f6c8e5c3.png" },
-              { name: "Synergy", logo: "/manus-storage/37942_bdf55f2e.png" },
+              { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png", scaleClass: "scale-[1.35]" },
+              { name: "Alinta Energy", logo: "/manus-storage/37943_f6c8e5c3.png", scaleClass: "scale-[1.25]" },
+              { name: "Synergy", logo: "/manus-storage/37942_bdf55f2e.png", scaleClass: "scale-[1.3]" },
               { name: "WA Treasury Corp", logo: "/manus-storage/37936_e28c4255.png" },
-              { name: "WA Police", logo: "/manus-storage/37937_837442a9.png" },
+              { name: "WA Police", logo: "/manus-storage/37937_837442a9.png", scaleClass: "scale-[1.25]" },
               { name: "DFES", logo: "/manus-storage/37941_c7aecb42.png" },
-              { name: "Perth Transport", logo: "/manus-storage/37947_fe88b17a.png" },
-              { name: "Horizon Power", logo: "/manus-storage/37935_7c7d4488.png" },
+              { name: "Perth Transport", logo: "/manus-storage/37947_fe88b17a.png", scaleClass: "scale-[1.3]" },
+              { name: "Horizon Power", logo: "/manus-storage/37935_7c7d4488.png", scaleClass: "scale-[1.35]" },
               { name: "Vault Minerals", logo: "/manus-storage/37945_fb64d68b.png" }
             ].map((client) => (
               <div 
@@ -272,7 +274,7 @@ export default function Home() {
                 <img 
                   src={client.logo} 
                   alt={`${client.name} Logo`} 
-                  className="w-auto h-auto max-w-[96%] max-h-[96%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.01]"
+                  className={`w-auto h-auto max-w-[96%] max-h-[96%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.01] ${client.scaleClass || ""}`}
                 />
               </div>
             ))}
