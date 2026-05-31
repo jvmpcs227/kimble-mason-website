@@ -92,15 +92,15 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-accent/30 selection:text-primary">
       
       {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-1.5 md:py-2">
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-1 md:py-1.5">
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center group">
-            {/* Enlarged logo with no accompanying text, slimmed down container but larger logo */}
-            <div className="w-24 h-24 md:w-28 md:h-28 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-3 md:-my-4">
+            {/* Slightly reduced logo and slimmer container for refined proportions */}
+            <div className="w-20 h-20 md:w-24 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-2.5 md:-my-3">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-110 object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-105 object-contain bg-transparent border-0 shadow-none"
               />
             </div>
           </a>
@@ -561,7 +561,6 @@ export default function Home() {
                     <Mail className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Email Directly</p>
                     <a href="mailto:kim@integral.global" className="text-base font-bold text-primary hover:text-accent transition-colors">
                       kim@integral.global
                     </a>
@@ -573,7 +572,6 @@ export default function Home() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Call Kim</p>
                     <a href="tel:0455488842" className="text-base font-bold text-primary hover:text-accent transition-colors">
                       0455 488 842
                     </a>
@@ -585,7 +583,6 @@ export default function Home() {
                     <MapPin className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">Location</p>
                     <p className="text-base font-bold text-primary">
                       Perth, Western Australia
                     </p>
@@ -597,7 +594,6 @@ export default function Home() {
                     <Award className="w-5 h-5" />
                   </div>
                   <div>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider font-semibold">LinkedIn Profile</p>
                     <a 
                       href="https://au.linkedin.com/in/kimble-mason-092a981" 
                       target="_blank" 
