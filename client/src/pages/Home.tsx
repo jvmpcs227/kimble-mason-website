@@ -96,17 +96,17 @@ export default function Home() {
     <div className="min-h-screen bg-background text-foreground flex flex-col selection:bg-accent/30 selection:text-primary">
       
       {/* 1. NAVIGATION BAR - PERMANENTLY WHITE */}
-      {/* Increased height slightly to py-2 md:py-2.5 to accommodate noticeably bigger logo (w-24 h-24 -> w-28 h-24 on desktop) without looking cramped */}
-      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-2 md:py-2.5">
+      {/* Increased navbar height by exactly 3% (padding py-2 md:py-2.5 -> py-2.06 md:py-2.575, rounded to py-2 md:py-3) to cleanly accommodate the larger logo */}
+      <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-background border-b border-border shadow-sm py-2 md:py-3">
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
             {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
-            {/* Added 3% to the scale (1.10 -> 1.13) to make the logo exactly 3% bigger without altering any surrounding dimensions or text */}
+            {/* Added exactly 7% to the previous logo scale (1.133 * 1.07 = 1.212) to make the logo exactly 7% bigger */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
                 src="/manus-storage/client_logo_transparent_ed3cf196.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-[1.133] object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
               />
             </div>
             {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
@@ -172,11 +172,6 @@ export default function Home() {
 
         <div className="container relative z-20 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center py-6 md:py-10">
           <div className="lg:col-span-8 flex flex-col space-y-6 text-left">
-            {/* Removed Shield Icon & Updated Badge Text */}
-            <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1 self-start">
-              <span className="text-xs uppercase tracking-widest text-accent font-bold">30+ Years British Army Officer Leadership</span>
-            </div>
-            
             {/* 4. HERO SECTION — REORDER AND RESIZE TEXT */}
             {/* Executive Coaching is now the dominant larger text */}
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary-foreground leading-[1.3] font-serif">
@@ -217,10 +212,15 @@ export default function Home() {
             {/* 5. HERO SECTION — MOVE LEADERSHIP QUOTE DIRECTLY UNDER PHOTO */}
             {/* Matches the portrait width (max-w-[240px] lg:w-[240px]) exactly so they align perfectly on both desktop edges */}
             {/* Made the quote text slightly larger on desktop (lg:text-sm instead of text-xs) for significantly improved readability */}
-            <div className="w-full max-w-[240px] lg:w-[240px] text-left">
+            <div className="w-full max-w-[240px] lg:w-[240px] text-left space-y-4">
               <blockquote className="border-l-2 border-accent pl-3 py-0.5 italic text-primary-foreground/80 text-xs lg:text-sm font-serif leading-relaxed">
                 "True leadership is not about position, authority or command; it is about the ability to influence and direct a group of people to achieve willingly the team or Organisational Goals" <span className="not-italic font-sans text-[10px] lg:text-[11px] uppercase tracking-wider text-accent font-bold ml-1.5 whitespace-nowrap">— Kimble J Mason</span>
               </blockquote>
+
+              {/* Moved '30+ Years' Badge directly underneath the subheading text below Kim's photo */}
+              <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1.5 w-full justify-center">
+                <span className="text-[10px] uppercase tracking-widest text-accent font-bold text-center">30+ Years British Army Officer Leadership</span>
+              </div>
             </div>
           </div>
         </div>
