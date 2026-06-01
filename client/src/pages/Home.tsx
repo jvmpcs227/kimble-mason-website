@@ -271,12 +271,12 @@ export default function Home() {
             ].map((client) => (
               <div 
                 key={client.name} 
-                className="bg-white border border-transparent rounded-lg p-2 md:p-3 h-24 flex items-center justify-center transition-all duration-300 hover:scale-[1.02] group w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
+                className="bg-white border border-transparent rounded-lg p-2 md:p-3 h-24 flex items-center justify-center transition-all duration-300 md:hover:scale-[1.03] w-[calc(50%-8px)] md:w-[calc(33.333%-16px)] lg:w-[calc(25%-18px)] min-w-[140px] max-w-[280px]"
               >
                 <img 
                   src={client.logo} 
                   alt={`${client.name} Logo`} 
-                  className={`w-auto h-auto max-w-[96%] max-h-[96%] object-contain filter-none transition-transform duration-300 group-hover:scale-[1.01] ${client.scaleClass || ""}`}
+                  className={`w-auto h-auto max-w-[96%] max-h-[96%] object-contain filter-none ${client.scaleClass || ""}`}
                 />
               </div>
             ))}
