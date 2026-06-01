@@ -1,0 +1,8 @@
+# robots.txt for Kimble Mason Leadership Development
+# https://kimmasonleadership.com.au
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://kimmasonleadership.com.au/sitemap.xml

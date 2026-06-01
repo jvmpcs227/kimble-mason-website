@@ -104,9 +104,12 @@ export default function Home() {
             {/* Added exactly 7% to the previous logo scale (1.133 * 1.07 = 1.212) to make the logo exactly 7% bigger */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
-                src="/images/client_logo_transparent.png" 
+                src="/images/client_logo_transparent.webp" 
+                srcSet="/images/client_logo_transparent_mobile.webp 120w, /images/client_logo_transparent.webp 252w"
+                sizes="(max-width: 768px) 120px, 252px"
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
+                loading="eager"
               />
             </div>
             {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
@@ -165,7 +168,8 @@ export default function Home() {
             {/* 2. HERO SECTION - Vertically narrower (py-12 md:py-16, removed min-h-screen to avoid taking too much screen height) */}
       <section className="relative flex items-center justify-center pt-32 pb-16 overflow-hidden bg-primary">
         {/* Subtle Textured Background */}
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{ backgroundImage: `url('/images/hero_bg.jpg')` }} />
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center hidden md:block" style={{ backgroundImage: `url('/images/hero_bg.webp')` }} />
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center block md:hidden" style={{ backgroundImage: `url('/images/hero_bg_mobile.webp')` }} />
         
         {/* Subtle Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
@@ -202,9 +206,12 @@ export default function Home() {
               
               <div className="w-full h-full overflow-hidden bg-primary/20">
                 <img 
-                  src="/images/client_portrait_hero.jpg" 
+                  src="/images/client_portrait_hero.webp" 
+                  srcSet="/images/client_portrait_hero_mobile.webp 320w, /images/client_portrait_hero.webp 713w"
+                  sizes="(max-width: 768px) 320px, 713px"
                   alt="Kimble Mason - Leadership Coach Perth" 
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
+                  loading="eager"
                 />
               </div>
             </div>
@@ -258,16 +265,16 @@ export default function Home() {
           {/* Logo Strip Grid - Desktop row-centering layout with custom scale overrides to ensure all logos match visually */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
-              { name: "BHP", logo: "/images/37944.png" },
-              { name: "Rio Tinto", logo: "/images/37930.png", scaleClass: "scale-[1.35]" },
-              { name: "Alinta Energy", logo: "/images/37943.png", scaleClass: "scale-[1.25]" },
-              { name: "Synergy", logo: "/images/37942.png", scaleClass: "scale-[1.3]" },
-              { name: "WA Treasury Corp", logo: "/images/37936.png" },
-              { name: "WA Police", logo: "/images/37937.png", scaleClass: "scale-[1.25]" },
-              { name: "DFES", logo: "/images/37941.png" },
-              { name: "Perth Transport", logo: "/images/37947.png", scaleClass: "scale-[1.3]" },
-              { name: "Horizon Power", logo: "/images/37935.png", scaleClass: "scale-[1.35]" },
-              { name: "Vault Minerals", logo: "/images/37945.png" }
+              { name: "BHP", logo: "/images/37944.webp" },
+              { name: "Rio Tinto", logo: "/images/37930.webp", scaleClass: "scale-[1.35]" },
+              { name: "Alinta Energy", logo: "/images/37943.webp", scaleClass: "scale-[1.25]" },
+              { name: "Synergy", logo: "/images/37942.webp", scaleClass: "scale-[1.3]" },
+              { name: "WA Treasury Corp", logo: "/images/37936.webp" },
+              { name: "WA Police", logo: "/images/37937.webp", scaleClass: "scale-[1.25]" },
+              { name: "DFES", logo: "/images/37941.webp" },
+              { name: "Perth Transport", logo: "/images/37947.webp", scaleClass: "scale-[1.3]" },
+              { name: "Horizon Power", logo: "/images/37935.webp", scaleClass: "scale-[1.35]" },
+              { name: "Vault Minerals", logo: "/images/37945.webp" }
             ].map((client) => (
               <div 
                 key={client.name} 
@@ -670,9 +677,10 @@ export default function Home() {
             {/* Noticeably bigger KJM logo in footer, matched exactly to the header logo size across all devices */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none">
               <img 
-                src="/images/client_logo_transparent.png" 
+                src="/images/client_logo_transparent.webp" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
+                loading="lazy"
               />
             </div>
 
