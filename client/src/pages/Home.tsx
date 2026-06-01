@@ -667,13 +667,12 @@ export default function Home() {
       <footer className="bg-primary text-primary-foreground border-t border-primary-foreground/10 py-12">
         <div className="container">
           <div className="flex flex-col items-center gap-6">
-            {/* Noticeably bigger KJM logo in footer (w-24 h-24 instead of w-16 h-16) */}
-            {/* Added 3% to the scale (1.10 -> 1.13) to make the footer logo exactly 3% bigger */}
-            <div className="w-24 h-24 flex items-center justify-center bg-transparent border-0 shadow-none">
+            {/* Noticeably bigger KJM logo in footer, matched exactly to the header logo size across all devices */}
+            <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none">
               <img 
                 src="/images/client_logo_transparent.png" 
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full object-contain bg-transparent border-0 shadow-none scale-[1.133]"
+                className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
               />
             </div>
 
