@@ -104,7 +104,7 @@ export default function Home() {
             {/* Added exactly 7% to the previous logo scale (1.133 * 1.07 = 1.212) to make the logo exactly 7% bigger */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
-                src="/manus-storage/client_logo_transparent_ed3cf196.png" 
+                src="/images/client_logo_transparent.png" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
               />
@@ -165,7 +165,7 @@ export default function Home() {
             {/* 2. HERO SECTION - Vertically narrower (py-12 md:py-16, removed min-h-screen to avoid taking too much screen height) */}
       <section className="relative flex items-center justify-center pt-32 pb-16 overflow-hidden bg-primary">
         {/* Subtle Textured Background */}
-        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{ backgroundImage: `url('https://d2xsxph8kpxj0f.cloudfront.net/310519663575070665/EYXzQ57mEo6YHZtxS5bFmo/hero_bg-nbdrtnu7oiFTdrbRiwnQTj.webp')` }} />
+        <div className="absolute inset-0 z-0 opacity-40 mix-blend-multiply bg-cover bg-center" style={{ backgroundImage: `url('/images/hero_bg.jpg')` }} />
         
         {/* Subtle Dark Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-transparent z-10" />
@@ -202,7 +202,7 @@ export default function Home() {
               
               <div className="w-full h-full overflow-hidden bg-primary/20">
                 <img 
-                  src="/manus-storage/client_portrait_hero_7e1d775c.jpg" 
+                  src="/images/client_portrait_hero.jpg" 
                   alt="Kimble Mason - Leadership Coach Perth" 
                   className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                 />
@@ -258,16 +258,16 @@ export default function Home() {
           {/* Logo Strip Grid - Desktop row-centering layout with custom scale overrides to ensure all logos match visually */}
           <div className="flex flex-wrap justify-center gap-4 md:gap-6">
             {[
-              { name: "BHP", logo: "/manus-storage/37944_c20e45a9.png" },
-              { name: "Rio Tinto", logo: "/manus-storage/37930_428cf700.png", scaleClass: "scale-[1.35]" },
-              { name: "Alinta Energy", logo: "/manus-storage/37943_f6c8e5c3.png", scaleClass: "scale-[1.25]" },
-              { name: "Synergy", logo: "/manus-storage/37942_bdf55f2e.png", scaleClass: "scale-[1.3]" },
-              { name: "WA Treasury Corp", logo: "/manus-storage/37936_e28c4255.png" },
-              { name: "WA Police", logo: "/manus-storage/37937_837442a9.png", scaleClass: "scale-[1.25]" },
-              { name: "DFES", logo: "/manus-storage/37941_c7aecb42.png" },
-              { name: "Perth Transport", logo: "/manus-storage/37947_fe88b17a.png", scaleClass: "scale-[1.3]" },
-              { name: "Horizon Power", logo: "/manus-storage/37935_7c7d4488.png", scaleClass: "scale-[1.35]" },
-              { name: "Vault Minerals", logo: "/manus-storage/37945_fb64d68b.png" }
+              { name: "BHP", logo: "/images/37944.png" },
+              { name: "Rio Tinto", logo: "/images/37930.png", scaleClass: "scale-[1.35]" },
+              { name: "Alinta Energy", logo: "/images/37943.png", scaleClass: "scale-[1.25]" },
+              { name: "Synergy", logo: "/images/37942.png", scaleClass: "scale-[1.3]" },
+              { name: "WA Treasury Corp", logo: "/images/37936.png" },
+              { name: "WA Police", logo: "/images/37937.png", scaleClass: "scale-[1.25]" },
+              { name: "DFES", logo: "/images/37941.png" },
+              { name: "Perth Transport", logo: "/images/37947.png", scaleClass: "scale-[1.3]" },
+              { name: "Horizon Power", logo: "/images/37935.png", scaleClass: "scale-[1.35]" },
+              { name: "Vault Minerals", logo: "/images/37945.png" }
             ].map((client) => (
               <div 
                 key={client.name} 
@@ -671,7 +671,7 @@ export default function Home() {
             {/* Added 3% to the scale (1.10 -> 1.13) to make the footer logo exactly 3% bigger */}
             <div className="w-24 h-24 flex items-center justify-center bg-transparent border-0 shadow-none">
               <img 
-                src="/manus-storage/client_logo_transparent_ed3cf196.png" 
+                src="/images/client_logo_transparent.png" 
                 alt="KJM Leadership Development Logo" 
                 className="w-full h-full object-contain bg-transparent border-0 shadow-none scale-[1.133]"
               />
