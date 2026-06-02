@@ -226,8 +226,9 @@ export default function Home() {
               </blockquote>
 
               {/* Moved '30+ Years' Badge directly underneath the subheading text below Kim's photo */}
-              <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1.5 w-full justify-center">
-                <span className="text-[10px] uppercase tracking-widest text-accent font-bold text-center">30+ Years British Army Officer</span>
+              {/* Added whitespace-nowrap and slightly adjusted tracking/text-size to guarantee it stays strictly on one line inside the 240px container on all devices */}
+              <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-2 py-1.5 w-full justify-center overflow-hidden">
+                <span className="text-[9.5px] lg:text-[10px] uppercase tracking-wider text-accent font-bold text-center whitespace-nowrap">30+ Years British Army Officer</span>
               </div>
             </div>
           </div>
