@@ -103,7 +103,7 @@ export default function Home() {
             {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
             {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
             {/* Made the logo exactly 7% larger than previous scale (1.212 * 1.07 = 1.297) */}
-            <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
+            <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5 ml-4 mr-3 md:ml-6 md:mr-5">
               <img 
                 src="/images/client_logo_transparent.webp" 
                 srcSet="/images/client_logo_transparent_mobile.webp 120w, /images/client_logo_transparent.webp 252w"
