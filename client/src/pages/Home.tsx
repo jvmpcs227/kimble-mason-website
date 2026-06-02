@@ -101,14 +101,15 @@ export default function Home() {
         <div className="container flex items-center justify-between">
           <a href="#" className="flex items-center gap-3 group">
             {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
-            {/* Added exactly 7% to the previous logo scale (1.133 * 1.07 = 1.212) to make the logo exactly 7% bigger */}
+            {/* Logo container - noticeably bigger logo, custom aspect, fits neatly with slim modern bar padding */}
+            {/* Made the logo exactly 7% larger than previous scale (1.212 * 1.07 = 1.297) */}
             <div className="w-24 h-24 md:w-28 md:h-24 flex items-center justify-center relative bg-transparent border-0 shadow-none -my-4 md:-my-5">
               <img 
                 src="/images/client_logo_transparent.webp" 
                 srcSet="/images/client_logo_transparent_mobile.webp 120w, /images/client_logo_transparent.webp 252w"
                 sizes="(max-width: 768px) 120px, 252px"
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-[1.212] object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-[1.297] object-contain bg-transparent border-0 shadow-none"
                 loading="eager"
               />
             </div>
@@ -318,7 +319,7 @@ export default function Home() {
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
-                Inquire <ChevronRight className="w-3.5 h-3.5" />
+                Enquire <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
@@ -336,7 +337,7 @@ export default function Home() {
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
-                Inquire <ChevronRight className="w-3.5 h-3.5" />
+                Enquire <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
@@ -354,7 +355,7 @@ export default function Home() {
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
-                Inquire <ChevronRight className="w-3.5 h-3.5" />
+                Enquire <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
 
@@ -372,7 +373,7 @@ export default function Home() {
                 </p>
               </div>
               <a href="#contact" className="inline-flex items-center gap-1 text-xs uppercase tracking-widest text-accent font-bold pt-6 hover:text-primary transition-colors group-hover:translate-x-1 duration-300">
-                Inquire <ChevronRight className="w-3.5 h-3.5" />
+                Enquire <ChevronRight className="w-3.5 h-3.5" />
               </a>
             </div>
           </div>
