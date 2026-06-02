@@ -109,13 +109,13 @@ export default function Home() {
                 srcSet="/images/client_logo_transparent_mobile.webp 120w, /images/client_logo_transparent.webp 252w"
                 sizes="(max-width: 768px) 120px, 252px"
                 alt="KJM Leadership Development Logo" 
-                className="w-full h-full scale-[1.297] object-contain bg-transparent border-0 shadow-none"
+                className="w-full h-full scale-[1.45] object-contain bg-transparent border-0 shadow-none"
                 loading="eager"
               />
             </div>
             {/* 1. NAVBAR — ADD NAME NEXT TO LOGO (Vertically centered, subtitle removed) */}
             <div className="flex items-center">
-              <span className="font-serif text-base md:text-xl font-bold tracking-tight text-primary">Kimble J Mason</span>
+              <span className="font-serif text-sm md:text-lg font-bold tracking-tight text-primary">Kimble J Mason</span>
             </div>
           </a>
 
@@ -227,7 +227,7 @@ export default function Home() {
 
               {/* Moved '30+ Years' Badge directly underneath the subheading text below Kim's photo */}
               <div className="inline-flex items-center gap-2 border border-accent/30 bg-accent/10 px-3 py-1.5 w-full justify-center">
-                <span className="text-[10px] uppercase tracking-widest text-accent font-bold text-center">30+ Years British Army Officer Leadership</span>
+                <span className="text-[10px] uppercase tracking-widest text-accent font-bold text-center">30+ Years British Army Officer</span>
               </div>
             </div>
           </div>
