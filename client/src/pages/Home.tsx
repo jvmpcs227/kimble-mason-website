@@ -617,7 +617,7 @@ export default function Home() {
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       required 
-                      placeholder="e.g. John Doe" 
+                      placeholder="" 
                       className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
                     />
                   </div>
@@ -628,7 +628,7 @@ export default function Home() {
                       name="organisation" 
                       value={formData.organisation}
                       onChange={(e) => setFormData({ ...formData, organisation: e.target.value })}
-                      placeholder="e.g. Acme Corp" 
+                      placeholder="" 
                       className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
                     />
                   </div>
@@ -643,7 +643,7 @@ export default function Home() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required 
-                    placeholder="e.g. john@company.com" 
+                    placeholder="" 
                     className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
                   />
                 </div>
