@@ -37,6 +37,7 @@ export default function Home() {
     name: "",
     organisation: "",
     email: "",
+    phone: "",
     message: ""
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -68,8 +69,28 @@ export default function Home() {
 
   const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) {
+    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
       toast.error("Please fill in all required fields.");
+      return;
+    }
+
+    // Strict email validation regex (RFC 5322 compliant simple structure check to prevent fake/made-up emails)
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)+$/;
+    if (!emailRegex.test(formData.email)) {
+      toast.error("Please enter a valid email address.");
+      return;
+    }
+
+    // Australian Phone Number Validation Regex
+    // Matches:
+    // - Mobile: 04XX XXX XXX, +61 4XX XXX XXX, 614XXXXXXXX
+    // - Landline: (02) XXXX XXXX, 03XXXXXXXX, +61 8 XXXX XXXX
+    // - General: +61, 61, or 0 followed by 9 digits
+    const auPhoneRegex = /^(?:\+?61|0)[2-478](?:[ -]?[0-9]){8}$/;
+    // Strip spaces, dashes, and parentheses to validate the raw numbers
+    const cleanPhone = formData.phone.replace(/[\s\-()]/g, "");
+    if (!auPhoneRegex.test(cleanPhone)) {
+      toast.error("Please enter a valid Australian phone number.");
       return;
     }
     
@@ -86,6 +107,7 @@ export default function Home() {
           name: formData.name,
           organisation: formData.organisation,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
           _replyto: "kimjmason@hotmail.com"
         })
@@ -93,7 +115,7 @@ export default function Home() {
       
       if (response.ok) {
         toast.success("Thanks for your message, Kim will be in touch shortly.");
-        setFormData({ name: "", organisation: "", email: "", message: "" });
+        setFormData({ name: "", organisation: "", email: "", phone: "", message: "" });
       } else {
         const data = await response.json();
         if (data.errors) {
@@ -666,18 +688,33 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="space-y-1.5">
-                  <label htmlFor="email" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Email Address *</label>
-                  <Input 
-                    id="email" 
-                    name="email" 
-                    type="email" 
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    required 
-                    placeholder="" 
-                    className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
-                  />
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div className="space-y-1.5">
+                    <label htmlFor="email" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Email Address *</label>
+                    <Input 
+                      id="email" 
+                      name="email" 
+                      type="email" 
+                      value={formData.email}
+                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      required 
+                      placeholder="" 
+                      className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
+                    />
+                  </div>
+                  <div className="space-y-1.5">
+                    <label htmlFor="phone" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Phone Number *</label>
+                    <Input 
+                      id="phone" 
+                      name="phone" 
+                      type="tel" 
+                      value={formData.phone}
+                      onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      required 
+                      placeholder="" 
+                      className="bg-background border-border rounded-none focus-visible:ring-accent h-10 text-sm"
+                    />
+                  </div>
                 </div>
 
                 <div className="space-y-1.5">
