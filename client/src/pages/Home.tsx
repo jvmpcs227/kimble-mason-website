@@ -66,7 +66,7 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const handleContactSubmit = (e: React.FormEvent) => {
+  const handleContactSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.message) {
       toast.error("Please fill in all required fields.");
@@ -75,12 +75,38 @@ export default function Home() {
     
     setIsSubmitting(true);
     
-    // Simulate API call
-    setTimeout(() => {
+    try {
+      const response = await fetch("https://formspree.io/f/meewjlly", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          organisation: formData.organisation,
+          email: formData.email,
+          message: formData.message,
+          _replyto: "kimjmason@hotmail.com"
+        })
+      });
+      
+      if (response.ok) {
+        toast.success("Thanks for your message, Kim will be in touch shortly.");
+        setFormData({ name: "", organisation: "", email: "", message: "" });
+      } else {
+        const data = await response.json();
+        if (data.errors) {
+          toast.error(data.errors.map((err: any) => err.message).join(", "));
+        } else {
+          toast.error("There was a problem submitting your enquiry. Please try again.");
+        }
+      }
+    } catch (error) {
+      toast.error("There was an error sending your enquiry. Please check your connection and try again.");
+    } finally {
       setIsSubmitting(false);
-      toast.success("Thank you! Your message has been sent successfully. Kimble will be in touch shortly.");
-      setFormData({ name: "", organisation: "", email: "", message: "" });
-    }, 1200);
+    }
   };
 
   const navLinks = [
@@ -607,7 +633,13 @@ export default function Home() {
               <div className="absolute bottom-0 left-0 w-3 h-3 border-b border-l border-accent/40"></div>
               <div className="absolute bottom-0 right-0 w-3 h-3 border-b border-r border-accent/40"></div>
 
-              <form onSubmit={handleContactSubmit} className="space-y-4">
+              <form 
+                action="https://formspree.io/f/meewjlly" 
+                method="POST" 
+                onSubmit={handleContactSubmit} 
+                className="space-y-4"
+              >
+                <input type="hidden" name="_replyto" value="kimjmason@hotmail.com" />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="space-y-1.5">
                     <label htmlFor="name" className="text-[10px] uppercase tracking-wider font-bold text-primary/70">Full Name *</label>
