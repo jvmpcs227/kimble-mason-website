@@ -247,11 +247,11 @@ export default function Home() {
           {/* Premium Profile Portrait Container - Perfectly aligned with the quote on desktop */}
           <div className="lg:col-span-4 flex flex-col items-center lg:items-end space-y-6">
             {/* Set exact width on desktop (w-[240px]) to match the quote block precisely */}
-            <div className="relative w-full max-w-[240px] lg:w-[240px] aspect-[3/4] border border-accent/30 p-2 bg-primary-foreground/5 backdrop-blur-sm">
-              <div className="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-accent"></div>
-              <div className="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-accent"></div>
-              <div className="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-accent"></div>
-              <div className="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-accent"></div>
+            <div className="relative w-full max-w-[240px] lg:w-[240px] aspect-[3/4] bg-primary-foreground/5 backdrop-blur-sm">
+              <div className="absolute -top-[1px] -left-[1px] w-3 h-3 border-t-2 border-l-2 border-accent z-10"></div>
+              <div className="absolute -top-[1px] -right-[1px] w-3 h-3 border-t-2 border-r-2 border-accent z-10"></div>
+              <div className="absolute -bottom-[1px] -left-[1px] w-3 h-3 border-b-2 border-l-2 border-accent z-10"></div>
+              <div className="absolute -bottom-[1px] -right-[1px] w-3 h-3 border-b-2 border-r-2 border-accent z-10"></div>
               
               <div className="w-full h-full overflow-hidden bg-primary/20">
                 <img 
