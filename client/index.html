@@ -29,6 +29,97 @@
 
     <!-- Fonts configured locally as Arial -->
     <link rel="icon" type="image/png" href="/favicon.png">
+
+    <!-- Structured Data / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://www.kimmasonleadership.com.au/#business",
+            "name": "Kimble Mason Leadership Development",
+            "description": "Kimble Mason is a Perth-based Leadership Development Specialist and Executive Coach with 30+ years experience. Serving mining, energy and corporate organisations across Western Australia.",
+            "url": "https://www.kimmasonleadership.com.au/",
+            "telephone": "0455 488 842",
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Perth, Western Australia"
+            },
+            "priceRange": "Contact for pricing",
+            "founder": {
+              "@id": "https://www.kimmasonleadership.com.au/#kimble-mason"
+            }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://www.kimmasonleadership.com.au/#kimble-mason",
+            "name": "Kimble Mason",
+            "jobTitle": "Leadership Development Specialist and Executive Coach",
+            "description": "Kimble Mason is a leadership development specialist, executive coach and facilitator with over 30 years of experience developing individuals in complex, high-pressure public, military and private sector environments.",
+            "alumniOf": {
+              "@type": "CollegeOrUniversity",
+              "name": "Royal Military Academy Sandhurst"
+            },
+            "worksFor": {
+              "@id": "https://www.kimmasonleadership.com.au/#business"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.kimmasonleadership.com.au/#executive-coaching",
+            "name": "Executive Coaching",
+            "description": "Ideal for helping individuals to unlock their creative potential to achieve their work and life goals and to move forward on those things that are important to them.",
+            "provider": {
+              "@id": "https://www.kimmasonleadership.com.au/#business"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Perth, Western Australia"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.kimmasonleadership.com.au/#team-development-workshops",
+            "name": "Team Development Workshops",
+            "description": "Highly Interactive sessions designed to help develop effective and high performing teams by strengthening team understanding, dynamics, collaboration, trust, and accountability.",
+            "provider": {
+              "@id": "https://www.kimmasonleadership.com.au/#business"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Perth, Western Australia"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.kimmasonleadership.com.au/#leadership-training-programs",
+            "name": "Leadership Training Programs",
+            "description": "Structured courses covering topics such as 'What is effective Leadership?', Intent Based and Inclusive Leadership, Performance Management, Mental Wellbeing, Difficult Conversations, Conflict resolution, and change management.",
+            "provider": {
+              "@id": "https://www.kimmasonleadership.com.au/#business"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Perth, Western Australia"
+            }
+          },
+          {
+            "@type": "Service",
+            "@id": "https://www.kimmasonleadership.com.au/#executive-presentation-and-communication-skills",
+            "name": "Executive Presentation and Communication Skills",
+            "description": "Learn and practice the art of delivering information and presenting with confidence, personal impact, conviction, and authority.",
+            "provider": {
+              "@id": "https://www.kimmasonleadership.com.au/#business"
+            },
+            "areaServed": {
+              "@type": "AdministrativeArea",
+              "name": "Perth, Western Australia"
+            }
+          }
+        ]
+      }
+    </script>
   </head>
 
   <body>
